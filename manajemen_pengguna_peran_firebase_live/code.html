@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-error-container": "#ffdad6", "inverse-on-surface": "#2d3133", "on-primary-fixed-variant": "#444173", "inverse-primary": "#5b598c", "on-background": "#e0e3e5", "surface-container-lowest": "#0b0f10", "on-primary-container": "#8683ba", "primary": "#c4c1fb", "outline": "#928f9a", "on-tertiary": "#002a78", "on-secondary-fixed": "#2f1500", "on-error": "#690005", "surface-dim": "#101415", "surface-container-low": "#191c1e", "on-surface-variant": "#c8c5d0", "primary-container": "#1e1b4b", "inverse-surface": "#e0e3e5", "surface-container": "#1d2022", "background": "#101415", "primary-fixed-dim": "#c4c1fb", "surface-container-highest": "#323537", "surface-bright": "#363a3b", "surface-variant": "#323537", "outline-variant": "#47464f", "surface-container-high": "#272a2c", "surface": "#101415", "tertiary-container": "#001d58", "on-secondary": "#4d2600", "on-surface": "#e0e3e5", "secondary-fixed-dim": "#ffb77d", "secondary": "#ffb77d", "tertiary-fixed-dim": "#b4c5ff", "surface-tint": "#c4c1fb", "secondary-container": "#d97707", "error": "#ffb4ab", "tertiary-fixed": "#dbe1ff", "on-secondary-fixed-variant": "#6e3900", "tertiary": "#b4c5ff", "on-primary": "#2d2a5b", "primary-fixed": "#e3dfff", "on-primary-fixed": "#181445", "secondary-fixed": "#ffdcc3", "on-tertiary-fixed": "#00174b", "error-container": "#93000a", "on-tertiary-fixed-variant": "#003ea8", "on-tertiary-container": "#5382ff", "on-secondary-container": "#432100" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.5rem", "space-xs": "0.25rem", "space-md": "1rem", "space-lg": "1.5rem", "space-xl": "2.5rem", "gutter": "1.5rem", "margin": "2rem" }, "fontFamily": { "body-md": ["Inter"], "label-sm": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-md": ["Inter"], "headline-xl": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "body-lg": ["Inter"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }], "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }] } } } }</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/></head><body class="bg-surface font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col pt-space-lg pb-space-lg"><div class="px-space-lg mb-space-lg flex items-center gap-space-sm"><div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-primary font-headline-md">SP</div><div><h1 class="font-headline-sm text-on-surface">SP-PPT SMPN 10</h1><p class="text-label-sm text-secondary">Seni Budaya &amp; Teater</p></div></div><nav class="flex-1 px-space-md space-y-space-xs overflow-y-auto" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined mr-space-md">dashboard</span>Dashboard</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="nilai-saya" href="#"><span class="material-symbols-outlined mr-space-md">grade</span>Nilai Saya / Rekap</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="jadwal" href="#"><span class="material-symbols-outlined mr-space-md">calendar_month</span>Jadwal &amp; Kalender</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="absensi" href="#"><span class="material-symbols-outlined mr-space-md">how_to_reg</span>Absensi</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="checklist-tugas" href="#"><span class="material-symbols-outlined mr-space-md">checklist</span>Checklist Tugas</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="struktur-kerabat" href="#"><span class="material-symbols-outlined mr-space-md">groups</span>Struktur Kerabat Kerja</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="arsip-naskah" href="#"><span class="material-symbols-outlined mr-space-md">folder</span>Arsip Naskah &amp; Dokumen</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="aduan-bantuan" href="#"><span class="material-symbols-outlined mr-space-md">support_agent</span>Aduan &amp; Bantuan</a></nav></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-gutter"><div class="flex items-center gap-space-md"><span class="text-label-md text-secondary bg-secondary-container/20 px-space-sm py-space-xs rounded-full">Seni Budaya &amp; Teater</span></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm"><div class="text-right"><p class="text-body-sm font-semibold text-on-surface">Budi Santoso</p><span class="inline-block px-space-xs py-0.5 text-label-sm rounded bg-secondary text-on-secondary">Sutradara (Emas)</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtSDRxhpWBhj6LuRVKBl129F-qH2HS8aDH8ZPv6Ba9GT1LMe7e0yreFQ4I_7thzjhnx5FA5r1YriNovMuXxxO7Zue7EEhWqk4T3xBkhbSm26WcQ1Dyp04L1JvtgLNXeSSTKuKExCI-ytwZcq7zsKxsaPEy1cN6DrGI2pRGfnseGzmBG4YGQvW3U48L4BfxGatFJyiqXhFXRx4vqtF5I9uGlUkbujTrfpu0acu18MeWk4aXAA5fjMXTvw"/></div></div></header><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full min-h-screen pb-space-xl">
+<!-- Top Banner / Live Indicator Header -->
+<div class="relative w-full bg-surface-container-low px-space-gutter py-space-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md shadow-sm">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5 pointer-events-none"></div>
+<div class="flex items-center gap-space-md z-10">
+<div class="w-14 h-14 rounded-2xl bg-primary-container flex items-center justify-center text-primary shadow-inner">
+<span class="material-symbols-outlined text-3xl">admin_panel_settings</span>
+</div>
+<div>
+<div class="flex items-center gap-space-sm mb-1">
+<span class="px-space-sm py-0.5 rounded-full bg-secondary text-on-secondary text-label-sm font-semibold">Firebase Firestore Active</span>
+<span class="flex items-center gap-1 text-label-sm text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Live Sync: Connected
+          </span>
+</div>
+<h2 class="font-headline-lg text-on-surface">Manajemen Pengguna &amp; Peran Teater</h2>
+<p class="text-body-sm text-on-surface-variant">SMPN 10 Samarinda - Seni Budaya &amp; Teater Management System</p>
+</div>
+</div>
+<div class="flex items-center gap-space-md z-10 w-full md:w-auto justify-between md:justify-end">
+<div class="flex items-center gap-space-sm bg-surface-container px-space-md py-2 rounded-xl">
+<span class="material-symbols-outlined text-secondary">class</span>
+<div class="text-left">
+<p class="text-label-sm text-on-surface-variant">Kelas Aktif</p>
+<select class="bg-transparent text-body-sm font-semibold text-on-surface focus:outline-none cursor-pointer" id="activeClassFilter">
+<option class="bg-surface text-on-surface" value="all">Semua Kelas (IX-A s.d IX-F)</option>
+<option class="bg-surface text-on-surface" value="IX-A">Kelas IX-A</option>
+<option class="bg-surface text-on-surface" value="IX-B">Kelas IX-B</option>
+<option class="bg-surface text-on-surface" value="IX-C">Kelas IX-C</option>
+</select>
+</div>
+</div>
+<button class="flex items-center gap-space-sm px-space-lg py-3 rounded-xl bg-primary text-on-primary font-semibold hover:opacity-90 transition-all shadow-lg" onclick="openAddModal()">
+<span class="material-symbols-outlined">person_add</span>
+<span>Tambah Pengguna</span>
+</button>
+</div>
+</div>
+<!-- Main Content Body -->
+<div class="px-space-gutter mt-space-lg">
+<!-- Tabs -->
+<div class="flex items-center gap-space-md border-b border-outline-variant/30 pb-space-sm mb-space-lg">
+<button class="flex items-center gap-space-sm px-space-lg py-space-md rounded-xl font-headline-sm text-on-surface bg-primary-container text-on-primary-container transition-all" id="tab-teachers" onclick="switchTab('teachers')">
+<span class="material-symbols-outlined">supervisor_account</span>
+<span>Guru Pengampu &amp; Admin</span>
+<span class="ml-space-sm px-2 py-0.5 rounded-full bg-primary/20 text-primary text-label-sm">3</span>
+</button>
+<button class="flex items-center gap-space-sm px-space-lg py-space-md rounded-xl font-headline-sm text-on-surface-variant hover:bg-surface-container-high transition-all" id="tab-students" onclick="switchTab('students')">
+<span class="material-symbols-outlined">groups</span>
+<span>Daftar Siswa &amp; Peran Produksi</span>
+<span class="ml-space-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant text-label-sm">124</span>
+</button>
+</div>
+<!-- Toolbar: Search & Filters -->
+<div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-space-md mb-space-lg">
+<div class="relative flex-1 max-w-md">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">search</span>
+<input class="w-full bg-surface-container pl-12 pr-space-md py-3 rounded-xl text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary transition-all" id="searchInput" placeholder="Cari berdasarkan nama, NIP/NIS, atau email..." type="text"/>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-sm bg-surface-container px-space-md py-2.5 rounded-xl">
+<span class="material-symbols-outlined text-outline text-sm">filter_list</span>
+<select class="bg-transparent text-body-sm text-on-surface focus:outline-none cursor-pointer" id="roleFilter">
+<option class="bg-surface text-on-surface" value="all">Semua Peran / Divisi</option>
+<option class="bg-surface text-on-surface" value="Sutradara">Sutradara</option>
+<option class="bg-surface text-on-surface" value="Pimpinan Produksi">Pimpinan Produksi</option>
+<option class="bg-surface text-on-surface" value="Sekretaris">Sekretaris</option>
+<option class="bg-surface text-on-surface" value="Bendahara">Bendahara</option>
+<option class="bg-surface text-on-surface" value="Koordinator">Koordinator Divisi</option>
+</select>
+</div>
+<button class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface text-body-sm font-semibold transition-all" onclick="triggerFirebaseSync()">
+<span class="material-symbols-outlined text-primary" id="syncIcon">sync</span>
+<span>Sinkronisasi Data</span>
+</button>
+</div>
+</div>
+<!-- Teachers & Admins Section -->
+<div class="space-y-space-md" id="section-teachers">
+<div class="bg-surface-container rounded-2xl overflow-hidden shadow-md">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high text-label-md text-on-surface-variant uppercase tracking-wider">
+<th class="py-space-md px-space-lg">Nama &amp; Profil</th>
+<th class="py-space-md px-space-lg">NIP / ID Guru</th>
+<th class="py-space-md px-space-lg">Kontak (Email / WA)</th>
+<th class="py-space-md px-space-lg">Kelas Diampu</th>
+<th class="py-space-md px-space-lg">Hak Akses Peran</th>
+<th class="py-space-md px-space-lg text-right">Aksi</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10 text-body-md text-on-surface">
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="py-space-md px-space-lg flex items-center gap-space-md">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Portrait of a friendly Indonesian female teacher in her 40s wearing traditional batik uniform, smiling warmly against a clean modern classroom background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV3kCsUzNxk7_0gQdwTyjfryFXwLmxAa72ar4beGniLE0TqJx5YeFe25SsCZyc8DWwCtg2SPeFm6vymLxYCvnVtt9IhIWXW3GJp7nXG0BSDC_Erev_b90Eubl6jKa4yPgP6dEU7eWHCzbtmeBYn-LNERxOHgJ5ODxGLH7BkB31Ie7_ztt-zykiVhP-_ci3Z_R26L32QrhdpGTLjAFtSZ48OeHU54uSwQA6YBLdL6fxVQOSgyz0l_L2VA"/>
+<div>
+<p class="font-semibold text-on-surface">Dra. Hj. Siti Aminah, M.Pd</p>
+<span class="text-label-sm text-secondary">Guru Pembina Utama Seni Budaya</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg font-mono text-body-sm text-on-surface-variant">19680512 199203 2 005</td>
+<td class="py-space-md px-space-lg">
+<p class="text-on-surface">siti.aminah@smpn10samarinda.sch.id</p>
+<span class="text-label-sm text-emerald-400">WhatsApp: +62 812-3456-7890</span>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-wrap gap-1">
+<span class="px-2 py-0.5 rounded bg-primary/10 text-primary text-label-sm font-semibold">IX-A</span>
+<span class="px-2 py-0.5 rounded bg-primary/10 text-primary text-label-sm font-semibold">IX-B</span>
+<span class="px-2 py-0.5 rounded bg-primary/10 text-primary text-label-sm font-semibold">IX-C</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-label-sm font-semibold">Super Admin (Full Access)</span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-sm">
+<button class="p-2 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary transition-all" title="Edit Pengguna">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container-high hover:bg-error-container hover:text-on-error-container transition-all" title="Hapus">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="py-space-md px-space-lg flex items-center gap-space-md">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Portrait of a young charismatic Indonesian male art teacher wearing a neat dark shirt, looking confident in an auditorium." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2NRlra3YJinmmVEZzl_AEYS-21uYubbSOvaCI0kvzhNYFw3qWTK7XzYR1_4g91dKQt98_FuhAHyJsCPdX1tbVXczwFFWBoxR4-OdrGpKtoLZ_s8PN5L6EzEQKDqLziHTkrCgkIUKYTQcwnK4Lkqyra65gmZb83PG7n1povdk6tylwtDLFtmxkAoZdqn53cbeoTm_wwLHdwNMZsJM3nB-WRXKF5N-UIfZ0R79I2wDNJmKbLGddkI0Kpg"/>
+<div>
+<p class="font-semibold text-on-surface">Ahmad Fauzi, S.Sn</p>
+<span class="text-label-sm text-secondary">Koordinator Teater &amp; Musik</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg font-mono text-body-sm text-on-surface-variant">19851020 201001 1 003</td>
+<td class="py-space-md px-space-lg">
+<p class="text-on-surface">ahmad.fauzi@smpn10samarinda.sch.id</p>
+<span class="text-label-sm text-emerald-400">WhatsApp: +62 853-9876-5432</span>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-wrap gap-1">
+<span class="px-2 py-0.5 rounded bg-primary/10 text-primary text-label-sm font-semibold">IX-D</span>
+<span class="px-2 py-0.5 rounded bg-primary/10 text-primary text-label-sm font-semibold">IX-E</span>
+<span class="px-2 py-0.5 rounded bg-primary/10 text-primary text-label-sm font-semibold">IX-F</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="px-3 py-1 rounded-full bg-primary-container text-on-primary-container text-label-sm font-semibold">Admin Pengampu (Grade &amp; Assessment)</span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-sm">
+<button class="p-2 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary transition-all" title="Edit Pengguna">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container-high hover:bg-error-container hover:text-on-error-container transition-all" title="Hapus">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Students & Production Roles Section -->
+<div class="space-y-space-md hidden" id="section-students">
+<div class="bg-surface-container rounded-2xl overflow-hidden shadow-md">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high text-label-md text-on-surface-variant uppercase tracking-wider">
+<th class="py-space-md px-space-lg">Siswa &amp; NIS</th>
+<th class="py-space-md px-space-lg">Kelas</th>
+<th class="py-space-md px-space-lg">Peran Produksi (Badge)</th>
+<th class="py-space-md px-space-lg">Divisi Kerabat Kerja</th>
+<th class="py-space-md px-space-lg">No. WhatsApp</th>
+<th class="py-space-md px-space-lg">Firebase Auth Status</th>
+<th class="py-space-md px-space-lg text-right">Aksi</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10 text-body-md text-on-surface">
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="py-space-md px-space-lg flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container font-headline-sm flex items-center justify-center">BS</div>
+<div>
+<p class="font-semibold text-on-surface">Budi Santoso</p>
+<span class="text-label-sm text-outline">NIS: 12450</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg font-semibold text-primary">IX-A</td>
+<td class="py-space-md px-space-lg">
+<span class="px-3 py-1 rounded-full bg-secondary text-on-secondary text-label-sm font-semibold flex items-center gap-1 w-max">
+<span class="material-symbols-outlined text-xs">star</span> Sutradara (Emas)
+                  </span>
+</td>
+<td class="py-space-md px-space-lg text-on-surface-variant">Pimpinan Artistik</td>
+<td class="py-space-md px-space-lg font-mono text-body-sm text-emerald-400">+62 813-5544-3322</td>
+<td class="py-space-md px-space-lg">
+<span class="inline-flex items-center gap-1 text-label-sm text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Terverifikasi
+                  </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-sm">
+<button class="p-2 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary transition-all" title="Edit Peran">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container-high hover:bg-error-container hover:text-on-error-container transition-all" title="Reset Auth">
+<span class="material-symbols-outlined text-sm">lock_reset</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="py-space-md px-space-lg flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-primary-container text-primary font-headline-sm flex items-center justify-center">SN</div>
+<div>
+<p class="font-semibold text-on-surface">Siti Nurhaliza</p>
+<span class="text-label-sm text-outline">NIS: 12451</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg font-semibold text-primary">IX-A</td>
+<td class="py-space-md px-space-lg">
+<span class="px-3 py-1 rounded-full bg-primary text-on-primary text-label-sm font-semibold flex items-center gap-1 w-max">
+<span class="material-symbols-outlined text-xs">shield</span> Pimpinan Produksi
+                  </span>
+</td>
+<td class="py-space-md px-space-lg text-on-surface-variant">Manajemen &amp; Produksi</td>
+<td class="py-space-md px-space-lg font-mono text-body-sm text-emerald-400">+62 821-7788-9900</td>
+<td class="py-space-md px-space-lg">
+<span class="inline-flex items-center gap-1 text-label-sm text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Terverifikasi
+                  </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-sm">
+<button class="p-2 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary transition-all" title="Edit Peran">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container-high hover:bg-error-container hover:text-on-error-container transition-all" title="Reset Auth">
+<span class="material-symbols-outlined text-sm">lock_reset</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="py-space-md px-space-lg flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface-variant font-headline-sm flex items-center justify-center">DA</div>
+<div>
+<p class="font-semibold text-on-surface">Dimas Anggara</p>
+<span class="text-label-sm text-outline">NIS: 12452</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg font-semibold text-primary">IX-B</td>
+<td class="py-space-md px-space-lg">
+<span class="px-3 py-1 rounded-full bg-surface-container-highest text-on-surface text-label-sm font-semibold flex items-center gap-1 w-max">
+<span class="material-symbols-outlined text-xs">palette</span> Koordinator Divisi
+                  </span>
+</td>
+<td class="py-space-md px-space-lg text-on-surface-variant">Divisi Panggung &amp; Artistik</td>
+<td class="py-space-md px-space-lg font-mono text-body-sm text-emerald-400">+62 857-1122-3344</td>
+<td class="py-space-md px-space-lg">
+<span class="inline-flex items-center gap-1 text-label-sm text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> Pending Login
+                  </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-sm">
+<button class="p-2 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary transition-all" title="Edit Peran">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container-high hover:bg-error-container hover:text-on-error-container transition-all" title="Reset Auth">
+<span class="material-symbols-outlined text-sm">lock_reset</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<!-- Add/Edit User Modal (Hidden by default) -->
+<div class="fixed inset-0 bg-surface/80 backdrop-blur-md z-50 flex items-center justify-center hidden" id="userModal">
+<div class="bg-surface-container-high w-full max-w-lg rounded-3xl p-space-xl shadow-2xl relative border border-outline-variant/20">
+<div class="flex items-center justify-between mb-space-lg">
+<h3 class="font-headline-lg text-on-surface">Tambah / Edit Pengguna Firebase</h3>
+<button class="p-2 rounded-xl bg-surface-container hover:bg-surface-bright text-on-surface-variant" onclick="closeAddModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<form class="space-y-space-md" onsubmit="handleFormSubmit(event)">
+<div>
+<label class="block text-label-md text-on-surface-variant mb-space-xs">Nama Lengkap</label>
+<input class="w-full bg-surface px-space-md py-3 rounded-xl text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Contoh: Rina Melati" required="" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-space-md">
+<div>
+<label class="block text-label-md text-on-surface-variant mb-space-xs">NIS / NIP</label>
+<input class="w-full bg-surface px-space-md py-3 rounded-xl text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Contoh: 12453" required="" type="text"/>
+</div>
+<div>
+<label class="block text-label-md text-on-surface-variant mb-space-xs">Kelas</label>
+<select class="w-full bg-surface px-space-md py-3 rounded-xl text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary">
+<option>Kelas IX-A</option>
+<option>Kelas IX-B</option>
+<option>Kelas IX-C</option>
+<option>Kelas IX-D</option>
+<option>Kelas IX-E</option>
+<option>Kelas IX-F</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block text-label-md text-on-surface-variant mb-space-xs">Peran Teater / Badge</label>
+<select class="w-full bg-surface px-space-md py-3 rounded-xl text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary">
+<option>Sutradara (Emas)</option>
+<option>Pimpinan Produksi</option>
+<option>Sekretaris</option>
+<option>Bendahara</option>
+<option>Koordinator Divisi</option>
+<option>Anggota / Pemeran</option>
+</select>
+</div>
+<div>
+<label class="block text-label-md text-on-surface-variant mb-space-xs">Nomor WhatsApp</label>
+<input class="w-full bg-surface px-space-md py-3 rounded-xl text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary" placeholder="+62 812-xxxx-xxxx" required="" type="tel"/>
+</div>
+<div class="flex items-center justify-end gap-space-md pt-space-md">
+<button class="px-space-lg py-3 rounded-xl bg-surface-container text-on-surface font-semibold hover:bg-surface-bright transition-all" onclick="closeAddModal()" type="button">Batal</button>
+<button class="px-space-lg py-3 rounded-xl bg-primary text-on-primary font-semibold hover:opacity-90 transition-all flex items-center gap-space-sm" type="submit">
+<span class="material-symbols-outlined text-sm">cloud_upload</span>
+<span>Simpan ke Firestore</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+<script>
+    function switchTab(tab) {
+      const teachersSec = document.getElementById('section-teachers');
+      const studentsSec = document.getElementById('section-students');
+      const tabTeachers = document.getElementById('tab-teachers');
+      const tabStudents = document.getElementById('tab-students');
+
+      if (tab === 'teachers') {
+        teachersSec.classList.remove('hidden');
+        studentsSec.classList.add('hidden');
+        tabTeachers.className = "flex items-center gap-space-sm px-space-lg py-space-md rounded-xl font-headline-sm bg-primary-container text-on-primary-container transition-all";
+        tabStudents.className = "flex items-center gap-space-sm px-space-lg py-space-md rounded-xl font-headline-sm text-on-surface-variant hover:bg-surface-container-high transition-all";
+      } else {
+        teachersSec.classList.add('hidden');
+        studentsSec.classList.remove('hidden');
+        tabStudents.className = "flex items-center gap-space-sm px-space-lg py-space-md rounded-xl font-headline-sm bg-primary-container text-on-primary-container transition-all";
+        tabTeachers.className = "flex items-center gap-space-sm px-space-lg py-space-md rounded-xl font-headline-sm text-on-surface-variant hover:bg-surface-container-high transition-all";
+      }
+    }
+
+    function openAddModal() {
+      document.getElementById('userModal').classList.remove('hidden');
+    }
+
+    function closeAddModal() {
+      document.getElementById('userModal').classList.add('hidden');
+    }
+
+    function triggerFirebaseSync() {
+      const icon = document.getElementById('syncIcon');
+      icon.style.transform = 'rotate(360deg)';
+      icon.style.transition = 'transform 1s ease';
+      setTimeout(() => {
+        icon.style.transform = 'rotate(0deg)';
+        alert('Data berhasil disinkronkan secara real-time dengan Firebase Firestore SMPN 10 Samarinda.');
+      }, 1000);
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      alert('Pengguna baru berhasil ditambahkan dan disinkronkan ke Firebase Auth & Firestore database!');
+      closeAddModal();
+    }
+  </script>
+</div></main></div><div class="fixed bottom-6 right-6 z-50 flex flex-col gap-space-sm"><button class="flex items-center gap-space-sm px-space-md py-space-sm rounded-full bg-secondary text-on-secondary shadow-lg hover:opacity-90 transition-opacity"><span class="material-symbols-outlined">support</span><span class="text-body-sm font-semibold">Aduan WA</span></button><button class="flex items-center gap-space-sm px-space-md py-space-sm rounded-full bg-primary text-on-primary shadow-lg hover:opacity-90 transition-opacity"><span class="material-symbols-outlined">menu_book</span><span class="text-body-sm font-semibold">Panduan</span></button></div></body></html>

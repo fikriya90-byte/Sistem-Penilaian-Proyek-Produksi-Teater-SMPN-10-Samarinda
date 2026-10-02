@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-error-container": "#ffdad6", "inverse-on-surface": "#2d3133", "on-primary-fixed-variant": "#444173", "inverse-primary": "#5b598c", "on-background": "#e0e3e5", "surface-container-lowest": "#0b0f10", "on-primary-container": "#8683ba", "primary": "#c4c1fb", "outline": "#928f9a", "on-tertiary": "#002a78", "on-secondary-fixed": "#2f1500", "on-error": "#690005", "surface-dim": "#101415", "surface-container-low": "#191c1e", "on-surface-variant": "#c8c5d0", "primary-container": "#1e1b4b", "inverse-surface": "#e0e3e5", "surface-container": "#1d2022", "background": "#101415", "primary-fixed-dim": "#c4c1fb", "surface-container-highest": "#323537", "surface-bright": "#363a3b", "surface-variant": "#323537", "outline-variant": "#47464f", "surface-container-high": "#272a2c", "surface": "#101415", "tertiary-container": "#001d58", "on-secondary": "#4d2600", "on-surface": "#e0e3e5", "secondary-fixed-dim": "#ffb77d", "secondary": "#ffb77d", "tertiary-fixed-dim": "#b4c5ff", "surface-tint": "#c4c1fb", "secondary-container": "#d97707", "error": "#ffb4ab", "tertiary-fixed": "#dbe1ff", "on-secondary-fixed-variant": "#6e3900", "tertiary": "#b4c5ff", "on-primary": "#2d2a5b", "primary-fixed": "#e3dfff", "on-primary-fixed": "#181445", "secondary-fixed": "#ffdcc3", "on-tertiary-fixed": "#00174b", "error-container": "#93000a", "on-tertiary-fixed-variant": "#003ea8", "on-tertiary-container": "#5382ff", "on-secondary-container": "#432100" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.5rem", "space-xs": "0.25rem", "space-md": "1rem", "space-lg": "1.5rem", "space-xl": "2.5rem", "gutter": "1.5rem", "margin": "2rem" }, "fontFamily": { "body-md": ["Inter"], "label-sm": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-md": ["Inter"], "headline-xl": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "body-lg": ["Inter"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }], "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }] } } } }</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/></head><body class="bg-surface font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col pt-space-lg pb-space-lg"><div class="px-space-lg mb-space-lg flex items-center gap-space-sm"><div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-primary font-headline-md">SP</div><div><h1 class="font-headline-sm text-on-surface">SP-PPT</h1><p class="text-label-sm text-on-surface-variant">SMPN 10 Samarinda</p></div></div><nav class="flex-1 px-space-md space-y-space-xs overflow-y-auto" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined mr-space-md">dashboard</span>Dashboard</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="nilai-saya" href="#"><span class="material-symbols-outlined mr-space-md">grade</span>Nilai Saya / Rekap</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="jadwal" href="#"><span class="material-symbols-outlined mr-space-md">calendar_month</span>Jadwal &amp; Kalender</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="absensi" href="#"><span class="material-symbols-outlined mr-space-md">how_to_reg</span>Absensi</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="checklist-tugas" href="#"><span class="material-symbols-outlined mr-space-md">checklist</span>Checklist Tugas</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="struktur-kerabat" href="#"><span class="material-symbols-outlined mr-space-md">groups</span>Struktur Kerabat Kerja</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="arsip-naskah" href="#"><span class="material-symbols-outlined mr-space-md">folder</span>Arsip Naskah &amp; Dokumen</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="aduan-bantuan" href="#"><span class="material-symbols-outlined mr-space-md">support_agent</span>Aduan &amp; Bantuan</a></nav></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-gutter"><div class="flex items-center gap-space-md"><span class="text-label-md text-secondary bg-secondary-container/20 px-space-sm py-space-xs rounded-full">Seni Budaya &amp; Teater</span></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm"><div class="text-right"><p class="text-body-sm font-semibold text-on-surface">Budi Santoso</p><span class="inline-block px-space-xs py-0.5 text-label-sm rounded bg-secondary text-on-secondary">Sutradara (Emas)</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtSDRxhpWBhj6LuRVKBl129F-qH2HS8aDH8ZPv6Ba9GT1LMe7e0yreFQ4I_7thzjhnx5FA5r1YriNovMuXxxO7Zue7EEhWqk4T3xBkhbSm26WcQ1Dyp04L1JvtgLNXeSSTKuKExCI-ytwZcq7zsKxsaPEy1cN6DrGI2pRGfnseGzmBG4YGQvW3U48L4BfxGatFJyiqXhFXRx4vqtF5I9uGlUkbujTrfpu0acu18MeWk4aXAA5fjMXTvw"/></div></div></header><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full pb-24">
+<!-- Top Hero Bar / Page Header -->
+<div class="relative px-space-gutter pt-space-lg pb-space-md mb-space-lg bg-surface-container-low flex flex-col md:flex-row md:items-center md:justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-sm py-0.5 rounded-full text-label-sm bg-primary-container text-on-primary-container">Master Schedule &amp; Kalender</span>
+<span class="text-label-sm text-outline">SMPN 10 Samarinda • Produksi Teater 2024</span>
+</div>
+<h2 class="font-headline-xl text-on-surface">Jadwal &amp; Kalender Produksi</h2>
+<p class="text-body-md text-on-surface-variant max-w-2xl">Kelola seluruh linimasa latihan, gladi, pementasan, hingga peminjaman alat produksi secara real-time dan terintegrasi antar divisi.</p>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded-xl bg-primary text-on-primary font-semibold hover:opacity-90 transition-opacity shadow-lg" onclick="openModal('modal-tambah-umum')">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="text-body-sm">Tambah Jadwal Umum</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded-xl bg-secondary text-on-secondary font-semibold hover:opacity-90 transition-opacity shadow-lg" onclick="openModal('modal-tambah-divisi')">
+<span class="material-symbols-outlined">group_add</span>
+<span class="text-body-sm">Jadwal Divisi</span>
+</button>
+</div>
+</div>
+<!-- Filters & Categories Bar -->
+<div class="px-space-gutter mb-space-lg flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm overflow-x-auto w-full pb-2 lg:pb-0">
+<button class="px-space-md py-space-sm rounded-xl bg-secondary text-on-secondary text-body-sm font-semibold shrink-0">Semua Kategori</button>
+<button class="px-space-md py-space-sm rounded-xl bg-surface-container-high text-on-surface-variant hover:text-on-surface text-body-sm shrink-0 transition-colors">Rapat</button>
+<button class="px-space-md py-space-sm rounded-xl bg-surface-container-high text-on-surface-variant hover:text-on-surface text-body-sm shrink-0 transition-colors">Latihan</button>
+<button class="px-space-md py-space-sm rounded-xl bg-surface-container-high text-on-surface-variant hover:text-on-surface text-body-sm shrink-0 transition-colors">Gladi</button>
+<button class="px-space-md py-space-sm rounded-xl bg-surface-container-high text-on-surface-variant hover:text-on-surface text-body-sm shrink-0 transition-colors">Pementasan</button>
+<button class="px-space-md py-space-sm rounded-xl bg-surface-container-high text-on-surface-variant hover:text-on-surface text-body-sm shrink-0 transition-colors">Evaluasi</button>
+<button class="px-space-md py-space-sm rounded-xl bg-surface-container-high text-on-surface-variant hover:text-on-surface text-body-sm shrink-0 transition-colors">Produksi</button>
+<button class="px-space-md py-space-sm rounded-xl bg-surface-container-high text-on-surface-variant hover:text-on-surface text-body-sm shrink-0 transition-colors">Fitting</button>
+<button class="px-space-md py-space-sm rounded-xl bg-surface-container-high text-on-surface-variant hover:text-on-surface text-body-sm shrink-0 transition-colors">Briefing</button>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 w-full lg:w-auto">
+<select class="bg-surface-container-high text-on-surface px-space-md py-space-sm rounded-xl outline-none text-body-sm w-full lg:w-48">
+<option>Semua Divisi / Peran</option>
+<option>Sutradara &amp; Produser</option>
+<option>Divisi Aktor &amp; Peran</option>
+<option>Divisi Panggung &amp; Artistik</option>
+<option>Divisi Kostum &amp; Rias</option>
+<option>Divisi Musik &amp; Sound</option>
+</select>
+</div>
+</div>
+<!-- Main Grid: Timeline Master Schedule & Upcoming Card -->
+<div class="px-space-gutter grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-lg">
+<!-- Master Schedule Horizontal Timeline (8 cols) -->
+<div class="lg:col-span-8 bg-surface-container-low rounded-xl p-space-lg flex flex-col gap-space-md shadow-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary">timeline</span>
+<h3 class="font-headline-md text-on-surface">Master Schedule Garis Waktu Produksi</h3>
+</div>
+<span class="text-label-sm text-secondary bg-secondary-container/20 px-space-sm py-1 rounded-full">Fase Aktif: Pelaksanaan</span>
+</div>
+<p class="text-body-sm text-on-surface-variant">Linimasa makro dari tahap persiapan hingga pasca pementasan drama teater SMPN 10 Samarinda.</p>
+<!-- Timeline Graphic Container -->
+<div class="relative mt-space-md pt-space-md pb-space-sm overflow-x-auto">
+<div class="absolute top-1/2 left-0 right-0 h-1 bg-surface-container-highest -translate-y-1/2 z-0 min-w-[600px]"></div>
+<div class="relative z-10 flex items-center justify-between min-w-[600px] gap-space-md">
+<!-- Step 1: Persiapan (Hijau - Selesai) -->
+<div class="flex flex-col items-center text-center group cursor-pointer">
+<div class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 border-2 border-emerald-500 flex items-center justify-center font-bold mb-space-xs shadow-md">
+<span class="material-symbols-outlined text-sm">check</span>
+</div>
+<span class="text-label-md font-semibold text-on-surface">Persiapan</span>
+<span class="text-label-sm text-emerald-400">Selesai (Hijau)</span>
+</div>
+<!-- Step 2: Pelaksanaan (Kuning - Sedang Berjalan) -->
+<div class="flex flex-col items-center text-center group cursor-pointer">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-secondary border-2 border-secondary flex items-center justify-center font-bold mb-space-xs shadow-md animate-pulse">
+<span class="material-symbols-outlined text-sm">pending</span>
+</div>
+<span class="text-label-md font-semibold text-on-surface">Pelaksanaan</span>
+<span class="text-label-sm text-secondary">Aktif (Kuning)</span>
+</div>
+<!-- Step 3: Pertunjukan (Biru - Mendatang) -->
+<div class="flex flex-col items-center text-center group cursor-pointer">
+<div class="w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 border-2 border-blue-500/50 flex items-center justify-center font-bold mb-space-xs shadow-md">
+<span class="material-symbols-outlined text-sm">theater_comedy</span>
+</div>
+<span class="text-label-md font-semibold text-on-surface">Pertunjukan</span>
+<span class="text-label-sm text-blue-400">Mendatang (Biru)</span>
+</div>
+<!-- Step 4: Pasca (Merah / Siaga) -->
+<div class="flex flex-col items-center text-center group cursor-pointer">
+<div class="w-10 h-10 rounded-full bg-rose-500/10 text-rose-400 border-2 border-rose-500/30 flex items-center justify-center font-bold mb-space-xs shadow-md">
+<span class="material-symbols-outlined text-sm">flag</span>
+</div>
+<span class="text-label-md font-semibold text-on-surface">Pasca Produksi</span>
+<span class="text-label-sm text-rose-400">Evaluasi (Merah)</span>
+</div>
+</div>
+</div>
+<!-- Quick Status Legend Note -->
+<div class="bg-surface-container p-space-md rounded-xl flex items-center justify-between text-body-sm text-on-surface-variant mt-space-sm">
+<span class="flex items-center gap-space-xs"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> Hijau: Tuntas</span>
+<span class="flex items-center gap-space-xs"><span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Kuning: Berjalan</span>
+<span class="flex items-center gap-space-xs"><span class="w-2.5 h-2.5 rounded-full bg-blue-400"></span> Biru: Terjadwal</span>
+<span class="flex items-center gap-space-xs"><span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span> Merah: Kritis / Evaluasi</span>
+</div>
+</div>
+<!-- Jadwal Terdekat & Konfirmasi Kehadiran (4 cols) -->
+<div class="lg:col-span-4 bg-surface-container-low rounded-xl p-space-lg flex flex-col gap-space-md shadow-md border-l-4 border-secondary">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary">event_upcoming</span>
+<h3 class="font-headline-md text-on-surface">Jadwal Terdekat</h3>
+</div>
+<span class="text-label-sm bg-secondary text-on-secondary px-space-xs py-0.5 rounded font-semibold">Hari Ini</span>
+</div>
+<div class="bg-surface-container p-space-md rounded-xl flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-label-sm text-secondary font-semibold uppercase tracking-wider">Latihan Penuh Akt 1 &amp; 2</span>
+<h4 class="font-headline-sm text-on-surface mt-0.5">Gladi Bersih Panggung Utama</h4>
+</div>
+<span class="material-symbols-outlined text-secondary">mic_external_on</span>
+</div>
+<div class="flex flex-col gap-1 text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-sm">schedule</span> 14:00 - 17:30 WITA</div>
+<div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-sm">location_on</span> Aula Besar SMPN 10 Samarinda</div>
+<div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-sm">group</span> Seluruh Cast &amp; Crew Divisi Panggung</div>
+</div>
+<!-- Konfirmasi Kehadiran Actions -->
+<div class="mt-space-sm pt-space-sm border-t border-surface-container-high flex flex-col gap-space-xs">
+<span class="text-label-sm text-on-surface-variant">Konfirmasi Kehadiran Anda:</span>
+<div class="grid grid-cols-2 gap-space-sm">
+<button class="flex items-center justify-center gap-space-xs py-2 rounded-lg bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 font-semibold text-body-sm transition-colors" onclick="alert('Kehadiran Anda: HADIR telah dicatat ke sistem.')">
+<span class="material-symbols-outlined text-sm">check_circle</span> Hadir
+            </button>
+<button class="flex items-center justify-center gap-space-xs py-2 rounded-lg bg-rose-500/20 text-rose-400 hover:bg-rose-500/30 font-semibold text-body-sm transition-colors" onclick="alert('Status: TIDAK HADIR tercatat. Harap beri alasan ke Ketua Divisi.')">
+<span class="material-symbols-outlined text-sm">cancel</span> Tidak Hadir
+            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Calendar Section & Daily Agenda -->
+<div class="px-space-gutter grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-lg">
+<!-- Interactive Monthly Calendar (7 cols) -->
+<div class="lg:col-span-7 bg-surface-container-low rounded-xl p-space-lg flex flex-col gap-space-md shadow-md">
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary">calendar_month</span>
+<h3 class="font-headline-md text-on-surface">Oktober 2024</h3>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="p-2 rounded-lg bg-surface-container-high hover:bg-surface-container text-on-surface"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
+<button class="p-2 rounded-lg bg-surface-container-high hover:bg-surface-container text-on-surface"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
+</div>
+</div>
+<!-- Calendar Grid Header (Days) -->
+<div class="grid grid-cols-7 gap-1 text-center text-label-sm text-outline font-semibold">
+<div>Sen</div><div>Sel</div><div>Rab</div><div>Kam</div><div>Jum</div><div>Sab</div><div>Min</div>
+</div>
+<!-- Calendar Days -->
+<div class="grid grid-cols-7 gap-1 text-body-sm">
+<!-- Week 1 -->
+<div class="h-20 bg-surface-container/40 p-1.5 rounded-lg text-outline">30</div>
+<div class="h-20 bg-surface-container p-1.5 rounded-lg flex flex-col justify-between text-on-surface">
+<span>1</span>
+<div class="flex gap-1"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span></div>
+</div>
+<div class="h-20 bg-surface-container p-1.5 rounded-lg flex flex-col justify-between text-on-surface">
+<span>2</span>
+<div class="flex gap-1"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span></div>
+</div>
+<div class="h-20 bg-surface-container p-1.5 rounded-lg flex flex-col justify-between text-on-surface">
+<span>3</span>
+<div class="flex gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span></div>
+</div>
+<div class="h-20 bg-surface-container p-1.5 rounded-lg flex flex-col justify-between text-on-surface">
+<span>4</span>
+</div>
+<div class="h-20 bg-surface-container p-1.5 rounded-lg flex flex-col justify-between text-on-surface">
+<span>5</span>
+<div class="flex gap-1"><span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span></div>
+</div>
+<div class="h-20 bg-surface-container/60 p-1.5 rounded-lg text-on-surface-variant">6</div>
+<!-- Week 2 -->
+<div class="h-20 bg-surface-container p-1.5 rounded-lg flex flex-col justify-between text-on-surface">
+<span>7</span>
+<div class="flex gap-1"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span></div>
+</div>
+<div class="h-20 bg-surface-container p-1.5 rounded-lg flex flex-col justify-between text-on-surface"><span>8</span></div>
+<div class="h-20 bg-surface-container p-1.5 rounded-lg flex flex-col justify-between text-on-surface">
+<span>9</span>
+<div class="flex gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span></div>
+</div>
+<div class="h-20 bg-surface-container p-1.5 rounded-lg flex flex-col justify-between text-on-surface"><span>10</span></div>
+<div class="h-20 bg-surface-container p-1.5 rounded-lg flex flex-col justify-between text-on-surface bg-primary/10 border border-primary/30">
+<span class="font-bold text-primary">11</span>
+<div class="flex gap-1"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span></div>
+</div>
+<div class="h-20 bg-surface-container p-1.5 rounded-lg flex flex-col justify-between text-on-surface"><span>12</span></div>
+<div class="h-20 bg-surface-container/60 p-1.5 rounded-lg text-on-surface-variant">13</div>
+<!-- Week 3 -->
+<div class="h-20 bg-surface-container p-1.5 rounded-lg flex flex-col justify-between text-on-surface"><span>14</span></div>
+<div class="h-20 bg-surface-container p-1.5 rounded-lg flex flex-col justify-between text-on-surface">
+<span>15</span>
+<div class="flex gap-1"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span></div>
+</div>
+<div class="h-20 bg-surface-container p-1.5 rounded-lg flex flex-col justify-between text-on-surface"><span>16</span></div>
+<div class="h-20 bg-surface-container p-1.5 rounded-lg flex flex-col justify-between text-on-surface"><span>17</span></div>
+<div class="h-20 bg-surface-container p-1.5 rounded-lg flex flex-col justify-between text-on-surface">
+<span>18</span>
+<div class="flex gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span></div>
+</div>
+<div class="h-20 bg-surface-container p-1.5 rounded-lg flex flex-col justify-between text-on-surface"><span>19</span></div>
+<div class="h-20 bg-surface-container/60 p-1.5 rounded-lg text-on-surface-variant">20</div>
+</div>
+<!-- Color Dot Indicator Legend -->
+<div class="flex flex-wrap items-center gap-space-md text-label-sm text-on-surface-variant pt-space-xs border-t border-surface-container-high">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary"></span> Latihan</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-blue-400"></span> Rapat</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-400"></span> Gladi</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-rose-500"></span> Pementasan</span>
+</div>
+</div>
+<!-- Daily Agenda List for Selected Date (5 cols) -->
+<div class="lg:col-span-5 bg-surface-container-low rounded-xl p-space-lg flex flex-col gap-space-md shadow-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary">today</span>
+<h3 class="font-headline-md text-on-surface">Agenda Harian (11 Okt)</h3>
+</div>
+<span class="text-label-sm text-on-surface-variant bg-surface-container px-space-sm py-1 rounded">3 Agenda</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Item 1 -->
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col gap-1 border-l-2 border-secondary">
+<div class="flex items-center justify-between">
+<span class="text-label-sm text-secondary font-semibold">09:00 - 11:00 WITA</span>
+<span class="text-label-sm px-2 py-0.5 rounded bg-secondary-container/20 text-secondary">Rapat Koordinasi</span>
+</div>
+<h4 class="font-headline-sm text-on-surface text-base">Briefing Sutradara &amp; Koordinator Divisi</h4>
+<p class="text-body-sm text-on-surface-variant">Ruang Multimedia SMPN 10 Samarinda</p>
+</div>
+<!-- Item 2 -->
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col gap-1 border-l-2 border-emerald-400">
+<div class="flex items-center justify-between">
+<span class="text-label-sm text-emerald-400 font-semibold">13:30 - 16:00 WITA</span>
+<span class="text-label-sm px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400">Fitting &amp; Kostum</span>
+</div>
+<h4 class="font-headline-sm text-on-surface text-base">Fitting Busana Tokoh Utama</h4>
+<p class="text-body-sm text-on-surface-variant">Studio Seni &amp; Kostum</p>
+</div>
+<!-- Item 3 -->
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col gap-1 border-l-2 border-rose-500">
+<div class="flex items-center justify-between">
+<span class="text-label-sm text-rose-400 font-semibold">16:30 - 18:00 WITA</span>
+<span class="text-label-sm px-2 py-0.5 rounded bg-rose-500/20 text-rose-400">Pementasan Uji</span>
+</div>
+<h4 class="font-headline-sm text-on-surface text-base">Simulasi Pentas Mini Teater</h4>
+<p class="text-body-sm text-on-surface-variant">Panggung Terbuka Sekolah</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modul Booking Alat & Deteksi Bentrok (Full 12 cols) -->
+<div class="px-space-gutter mb-space-lg">
+<div class="bg-surface-container-low rounded-xl p-space-lg flex flex-col gap-space-md shadow-md">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary">inventory_2</span>
+<div>
+<h3 class="font-headline-md text-on-surface">Modul Booking Alat &amp; Inventaris Produksi</h3>
+<p class="text-body-sm text-on-surface-variant">Peminjaman Sound System, Properti, Kostum, Alat Rias, &amp; Panggung dengan Deteksi Bentrok Otomatis</p>
+</div>
+</div>
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded-xl bg-surface-container-high text-on-surface hover:bg-surface-container font-semibold text-body-sm transition-colors" onclick="alert('Form Permohonan Booking Alat Baru dibuka.')">
+<span class="material-symbols-outlined text-sm">add</span> Ajukan Booking Alat
+        </button>
+</div>
+<!-- Conflict Warning Alert Box -->
+<div class="bg-rose-500/10 border border-rose-500/30 p-space-md rounded-xl flex items-start gap-space-md">
+<span class="material-symbols-outlined text-rose-400 shrink-0 mt-0.5">warning</span>
+<div class="flex flex-col gap-0.5 text-body-sm">
+<span class="font-semibold text-rose-400">Deteksi Bentrok Jadwal Peminjaman Aktif</span>
+<span class="text-on-surface-variant">Sound System Utama &amp; Wireless Mic dipesan bersamaan oleh Divisi Musik dan Divisi Acara pada 12 Okt 2024 (15:00 WITA). Harap koordinasi ulang atau sesuaikan jadwal.</span>
+</div>
+</div>
+<!-- Booking Table / Cards -->
+<div class="overflow-x-auto mt-space-sm">
+<table class="w-full text-left text-body-sm min-w-[700px]">
+<thead>
+<tr class="text-outline text-label-sm border-b border-surface-container-high pb-2">
+<th class="pb-3 font-semibold">Kategori Alat</th>
+<th class="pb-3 font-semibold">Nama Item</th>
+<th class="pb-3 font-semibold">Peminjam / Divisi</th>
+<th class="pb-3 font-semibold">Waktu / Tanggal</th>
+<th class="pb-3 font-semibold">Status Persetujuan</th>
+<th class="pb-3 font-semibold text-right">Aksi</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high/50">
+<!-- Row 1 -->
+<tr>
+<td class="py-3 font-medium text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-sm text-secondary">speaker</span> Sound System</td>
+<td class="py-3 text-on-surface-variant">Wireless Mic Set (4 unit)</td>
+<td class="py-3 text-on-surface-variant">Divisi Musik &amp; Sound</td>
+<td class="py-3 text-on-surface-variant">12 Okt 2024 (14:00)</td>
+<td class="py-3"><span class="px-2.5 py-0.5 rounded-full text-label-sm bg-rose-500/20 text-rose-400 font-medium">Bentrok / Pending</span></td>
+<td class="py-3 text-right">
+<button class="text-secondary hover:underline font-medium text-body-sm">Resolusi</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr>
+<td class="py-3 font-medium text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-sm text-primary">chair</span> Properti</td>
+<td class="py-3 text-on-surface-variant">Kursi Kayu Antik &amp; Meja Direksi</td>
+<td class="py-3 text-on-surface-variant">Divisi Panggung &amp; Artistik</td>
+<td class="py-3 text-on-surface-variant">13 Okt 2024 (09:00)</td>
+<td class="py-3"><span class="px-2.5 py-0.5 rounded-full text-label-sm bg-emerald-500/20 text-emerald-400 font-medium">Approved</span></td>
+<td class="py-3 text-right">
+<button class="text-primary hover:underline font-medium text-body-sm">Detail</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr>
+<td class="py-3 font-medium text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-sm text-secondary">checkroom</span> Kostum</td>
+<td class="py-3 text-on-surface-variant">Kostum Bangsawan Era 1945 (12 psg)</td>
+<td class="py-3 text-on-surface-variant">Divisi Kostum &amp; Rias</td>
+<td class="py-3 text-on-surface-variant">14 Okt 2024 (10:00)</td>
+<td class="py-3"><span class="px-2.5 py-0.5 rounded-full text-label-sm bg-secondary-container/30 text-secondary font-medium">Pending</span></td>
+<td class="py-3 text-right">
+<button class="text-primary hover:underline font-medium text-body-sm">Setujui</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr>
+<td class="py-3 font-medium text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-sm text-blue-400">face</span> Alat Rias</td>
+<td class="py-3 text-on-surface-variant">Koper Make-up Panggung Profesional</td>
+<td class="py-3 text-on-surface-variant">Divisi Kostum &amp; Rias</td>
+<td class="py-3 text-on-surface-variant">15 Okt 2024 (13:00)</td>
+<td class="py-3"><span class="px-2.5 py-0.5 rounded-full text-label-sm bg-emerald-500/20 text-emerald-400 font-medium">Approved</span></td>
+<td class="py-3 text-right">
+<button class="text-primary hover:underline font-medium text-body-sm">Detail</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Modal Tambah Jadwal Umum (Hidden by default) -->
+<div class="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-space-gutter hidden" id="modal-tambah-umum">
+<div class="bg-surface-container-low border border-surface-container-high rounded-xl w-full max-w-lg p-space-lg flex flex-col gap-space-md shadow-2xl">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-on-surface">Tambah Jadwal Umum</h3>
+<button class="text-on-surface-variant hover:text-on-surface" onclick="closeModal('modal-tambah-umum')"><span class="material-symbols-outlined">close</span></button>
+</div>
+<p class="text-body-sm text-on-surface-variant">Dibuat oleh Pimpinan / Sekretaris / Sutradara / Guru untuk kalender utama produksi.</p>
+<div class="flex flex-col gap-space-sm">
+<div>
+<label class="text-label-md text-on-surface-variant mb-1 block">Nama Kegiatan / Agenda</label>
+<input class="w-full bg-surface-container text-on-surface px-space-md py-2 rounded-xl outline-none border border-surface-container-high focus:border-secondary" placeholder="Contoh: Gladi Bersih Akbar" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div>
+<label class="text-label-md text-on-surface-variant mb-1 block">Kategori</label>
+<select class="w-full bg-surface-container text-on-surface px-space-md py-2 rounded-xl outline-none border border-surface-container-high">
+<option>Pementasan</option>
+<option>Gladi</option>
+<option>Rapat</option>
+<option>Evaluasi</option>
+</select>
+</div>
+<div>
+<label class="text-label-md text-on-surface-variant mb-1 block">Tanggal</label>
+<input class="w-full bg-surface-container text-on-surface px-space-md py-2 rounded-xl outline-none border border-surface-container-high" type="date"/>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div>
+<label class="text-label-md text-on-surface-variant mb-1 block">Waktu Mulai - Selesai</label>
+<input class="w-full bg-surface-container text-on-surface px-space-md py-2 rounded-xl outline-none border border-surface-container-high" placeholder="14:00 - 17:00 WITA" type="text"/>
+</div>
+<div>
+<label class="text-label-md text-on-surface-variant mb-1 block">Lokasi / Tempat</label>
+<input class="w-full bg-surface-container text-on-surface px-space-md py-2 rounded-xl outline-none border border-surface-container-high" placeholder="Aula Utama" type="text"/>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-end gap-space-sm mt-space-sm">
+<button class="px-space-md py-2 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high text-body-sm font-semibold" onclick="closeModal('modal-tambah-umum')">Batal</button>
+<button class="px-space-md py-2 rounded-xl bg-primary text-on-primary text-body-sm font-semibold" onclick="alert('Jadwal Umum berhasil ditambahkan ke kalender utama.'); closeModal('modal-tambah-umum');">Simpan Jadwal</button>
+</div>
+</div>
+</div>
+<!-- Modal Tambah Jadwal Internal Divisi (Hidden by default) -->
+<div class="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-space-gutter hidden" id="modal-tambah-divisi">
+<div class="bg-surface-container-low border border-surface-container-high rounded-xl w-full max-w-lg p-space-lg flex flex-col gap-space-md shadow-2xl">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-on-surface">Tambah Jadwal Internal Divisi</h3>
+<button class="text-on-surface-variant hover:text-on-surface" onclick="closeModal('modal-tambah-divisi')"><span class="material-symbols-outlined">close</span></button>
+</div>
+<p class="text-body-sm text-on-surface-variant">Khusus Koordinator untuk mengatur jadwal khusus anggota divisinya.</p>
+<div class="flex flex-col gap-space-sm">
+<div>
+<label class="text-label-md text-on-surface-variant mb-1 block">Divisi Anda</label>
+<select class="w-full bg-surface-container text-on-surface px-space-md py-2 rounded-xl outline-none border border-surface-container-high">
+<option>Divisi Panggung &amp; Artistik</option>
+<option>Divisi Kostum &amp; Rias</option>
+<option>Divisi Musik &amp; Sound</option>
+<option>Divisi Aktor &amp; Peran</option>
+</select>
+</div>
+<div>
+<label class="text-label-md text-on-surface-variant mb-1 block">Agenda Divisi</label>
+<input class="w-full bg-surface-container text-on-surface px-space-md py-2 rounded-xl outline-none border border-surface-container-high" placeholder="Contoh: Latihan Vokal Terpisah" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div>
+<label class="text-label-md text-on-surface-variant mb-1 block">Tanggal</label>
+<input class="w-full bg-surface-container text-on-surface px-space-md py-2 rounded-xl outline-none border border-surface-container-high" type="date"/>
+</div>
+<div>
+<label class="text-label-md text-on-surface-variant mb-1 block">Waktu</label>
+<input class="w-full bg-surface-container text-on-surface px-space-md py-2 rounded-xl outline-none border border-surface-container-high" placeholder="15:30 WITA" type="text"/>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-end gap-space-sm mt-space-sm">
+<button class="px-space-md py-2 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high text-body-sm font-semibold" onclick="closeModal('modal-tambah-divisi')">Batal</button>
+<button class="px-space-md py-2 rounded-xl bg-secondary text-on-secondary text-body-sm font-semibold" onclick="alert('Jadwal Internal Divisi berhasil disimpan dan dikirim ke anggota.'); closeModal('modal-tambah-divisi');">Simpan Jadwal Divisi</button>
+</div>
+</div>
+</div>
+<script>
+    function openModal(id) {
+      document.getElementById(id).classList.remove('hidden');
+    }
+    function closeModal(id) {
+      document.getElementById(id).classList.add('hidden');
+    }
+  </script>
+</div></main></div><div class="fixed bottom-6 right-6 z-50 flex flex-col gap-space-sm"><button class="flex items-center gap-space-sm px-space-md py-space-sm rounded-full bg-secondary text-on-secondary shadow-lg hover:opacity-90 transition-opacity"><span class="material-symbols-outlined">support</span><span class="text-body-sm font-semibold">Aduan WA</span></button><button class="flex items-center gap-space-sm px-space-md py-space-sm rounded-full bg-primary text-on-primary shadow-lg hover:opacity-90 transition-opacity"><span class="material-symbols-outlined">menu_book</span><span class="text-body-sm font-semibold">Panduan</span></button></div></body></html>

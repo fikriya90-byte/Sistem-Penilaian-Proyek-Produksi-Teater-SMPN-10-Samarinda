@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-error-container": "#ffdad6", "inverse-on-surface": "#2d3133", "on-primary-fixed-variant": "#444173", "inverse-primary": "#5b598c", "on-background": "#e0e3e5", "surface-container-lowest": "#0b0f10", "on-primary-container": "#8683ba", "primary": "#c4c1fb", "outline": "#928f9a", "on-tertiary": "#002a78", "on-secondary-fixed": "#2f1500", "on-error": "#690005", "surface-dim": "#101415", "surface-container-low": "#191c1e", "on-surface-variant": "#c8c5d0", "primary-container": "#1e1b4b", "inverse-surface": "#e0e3e5", "surface-container": "#1d2022", "background": "#101415", "primary-fixed-dim": "#c4c1fb", "surface-container-highest": "#323537", "surface-bright": "#363a3b", "surface-variant": "#323537", "outline-variant": "#47464f", "surface-container-high": "#272a2c", "surface": "#101415", "tertiary-container": "#001d58", "on-secondary": "#4d2600", "on-surface": "#e0e3e5", "secondary-fixed-dim": "#ffb77d", "secondary": "#ffb77d", "tertiary-fixed-dim": "#b4c5ff", "surface-tint": "#c4c1fb", "secondary-container": "#d97707", "error": "#ffb4ab", "tertiary-fixed": "#dbe1ff", "on-secondary-fixed-variant": "#6e3900", "tertiary": "#b4c5ff", "on-primary": "#2d2a5b", "primary-fixed": "#e3dfff", "on-primary-fixed": "#181445", "secondary-fixed": "#ffdcc3", "on-tertiary-fixed": "#00174b", "error-container": "#93000a", "on-tertiary-fixed-variant": "#003ea8", "on-tertiary-container": "#5382ff", "on-secondary-container": "#432100" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.5rem", "space-xs": "0.25rem", "space-md": "1rem", "space-lg": "1.5rem", "space-xl": "2.5rem", "gutter": "1.5rem", "margin": "2rem" }, "fontFamily": { "body-md": ["Inter"], "label-sm": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-md": ["Inter"], "headline-xl": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "body-lg": ["Inter"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }], "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }] } } } }</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/></head><body class="font-body-md text-on-surface bg-surface relative" style="background-image: linear-gradient(to bottom, rgba(16, 20, 21, 0.92), rgba(16, 20, 21, 0.95)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuC4QwsU0z-uzKoiAKoTYDSKMbSxjVyCv5DashrNustAOQ0y1SXNcxLIYrM5ICdGxFkcU-66KnXxP2Nu6EEdGm0S6wMnizr9QNLqxH31pA0lVAoI0LcihNGwPt8pNPDvZgHhcYX452In2XKeypYfvewsCMq5Yo8kk9_LJNgVJHu8mpfpf5YxaixaZCvVg-Rf6-ZpgwbJ_dSWaBgXXpfonk2HrQjnrgYZXQ0eLmPU0xzkE4SlkmzEAu65bvKJAAlTnIRQpwE'); background-repeat: repeat; background-size: 300px;"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col pt-space-lg pb-space-lg border-r border-surface-container-high"><div class="px-space-lg mb-space-lg flex items-center gap-space-sm"><div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-primary font-headline-md">SP</div><div><h1 class="font-headline-sm text-on-surface">SP-PPT</h1><p class="text-label-sm text-on-surface-variant">SMPN 10 Samarinda</p></div></div><nav class="flex-1 px-space-md space-y-space-xs overflow-y-auto" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined mr-space-md">dashboard</span>Dashboard</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="nilai-saya" href="#"><span class="material-symbols-outlined mr-space-md">grade</span>Nilai Saya / Rekap</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="jadwal" href="#"><span class="material-symbols-outlined mr-space-md">calendar_month</span>Jadwal &amp; Kalender</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="absensi" href="#"><span class="material-symbols-outlined mr-space-md">how_to_reg</span>Absensi</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="checklist-tugas" href="#"><span class="material-symbols-outlined mr-space-md">checklist</span>Checklist Tugas</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="struktur-kerabat" href="#"><span class="material-symbols-outlined mr-space-md">groups</span>Struktur Kerabat Kerja</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="arsip-naskah" href="#"><span class="material-symbols-outlined mr-space-md">folder</span>Arsip Naskah &amp; Dokumen</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="aduan-bantuan" href="#"><span class="material-symbols-outlined mr-space-md">support_agent</span>Aduan &amp; Bantuan</a></nav></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-gutter border-b border-surface-container-high"><div class="flex items-center gap-space-md"><span class="text-label-md text-secondary bg-secondary-container/20 px-space-sm py-space-xs rounded-full">Seni Budaya &amp; Teater</span></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm"><div class="text-right"><p class="text-body-sm font-semibold text-on-surface">Budi Santoso</p><span class="inline-block px-space-xs py-0.5 text-label-sm rounded bg-secondary text-on-secondary">Sutradara (Emas)</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtSDRxhpWBhj6LuRVKBl129F-qH2HS8aDH8ZPv6Ba9GT1LMe7e0yreFQ4I_7thzjhnx5FA5r1YriNovMuXxxO7Zue7EEhWqk4T3xBkhbSm26WcQ1Dyp04L1JvtgLNXeSSTKuKExCI-ytwZcq7zsKxsaPEy1cN6DrGI2pRGfnseGzmBG4YGQvW3U48L4BfxGatFJyiqXhFXRx4vqtF5I9uGlUkbujTrfpu0acu18MeWk4aXAA5fjMXTvw"/></div></div></header><main class="relative pt-16 bg-transparent min-h-screen"><div class="flex flex-col w-full pb-24">
+<!-- Top Banner / Header Segment -->
+<div class="px-space-gutter pt-space-xl pb-space-lg flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-sm mb-space-xs">
+<span class="text-label-sm font-label-sm text-secondary bg-secondary-container/20 px-space-sm py-space-xs rounded-full uppercase tracking-wider">Modul Presensi Kehadiran</span>
+<span class="text-label-sm text-on-surface-variant">• SMPN 10 Samarinda</span>
+</div>
+<h1 class="text-headline-xl font-headline-xl text-on-surface">Presensi &amp; Absensi Digital Produksi</h1>
+<p class="text-body-md font-body-md text-on-surface-variant mt-space-xs max-w-2xl">
+        Pusat kontrol kehadiran real-time, sesi terkontrol peran, kode QR dinamis, dan rekap otomatis terintegrasi untuk seluruh kru pementasan teater.
+      </p>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<button class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl bg-secondary text-on-secondary font-headline-sm text-body-sm shadow-lg hover:opacity-95 transition-all" onclick="openNewSessionModal()">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+        Buat Sesi Baru
+      </button>
+<button class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl bg-surface-container-high text-on-surface font-headline-sm text-body-sm hover:bg-surface-bright transition-all">
+<span class="material-symbols-outlined text-[20px]">qr_code_scanner</span>
+        Scan QR Cepat
+      </button>
+</div>
+</div>
+<!-- Statistics Overview Grid -->
+<div class="px-space-gutter grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-xl">
+<!-- Stat Card 1 -->
+<div class="bg-surface-container-low rounded-xl p-space-lg flex flex-col justify-between relative overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-surface-container-high">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-primary/5 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="text-label-md font-label-md text-on-surface-variant uppercase">Total Sesi Terjadwal</span>
+<div class="w-10 h-10 rounded-xl bg-primary-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined">event_note</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline gap-space-xs">
+<span class="text-headline-lg font-headline-lg text-on-surface">42</span>
+<span class="text-body-sm text-on-surface-variant">Sesi</span>
+</div>
+<p class="text-body-sm text-secondary mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">trending_up</span> +4 sesi minggu ini
+        </p>
+</div>
+</div>
+<!-- Stat Card 2 -->
+<div class="bg-surface-container-low rounded-xl p-space-lg flex flex-col justify-between relative overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-surface-container-high">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-secondary/5 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="text-label-md font-label-md text-on-surface-variant uppercase">Rata-rata Kehadiran</span>
+<div class="w-10 h-10 rounded-xl bg-secondary-container/30 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline gap-space-xs">
+<span class="text-headline-lg font-headline-lg text-on-surface">94.8%</span>
+<span class="text-body-sm text-on-surface-variant">Kelas</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full mt-2 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 94.8%;"></div>
+</div>
+</div>
+</div>
+<!-- Stat Card 3 -->
+<div class="bg-surface-container-low rounded-xl p-space-lg flex flex-col justify-between relative overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-surface-container-high">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-tertiary/5 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="text-label-md font-label-md text-on-surface-variant uppercase">Siswa Paling Disiplin</span>
+<div class="w-10 h-10 rounded-xl bg-tertiary-container text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined">workspace_premium</span>
+</div>
+</div>
+<div>
+<p class="text-headline-sm font-headline-sm text-on-surface truncate">Alya Rahmawati</p>
+<p class="text-body-sm text-on-surface-variant mt-0.5">Divisi Panggung (100% Hadir)</p>
+</div>
+</div>
+<!-- Stat Card 4 -->
+<div class="bg-surface-container-low rounded-xl p-space-lg flex flex-col justify-between relative overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-surface-container-high">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-primary/5 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="text-label-md font-label-md text-on-surface-variant uppercase">Sesi Aktif Hari Ini</span>
+<div class="w-10 h-10 rounded-xl bg-primary-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined animate-pulse">radio_button_checked</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline gap-space-xs">
+<span class="text-headline-lg font-headline-lg text-secondary">2 Sesi</span>
+<span class="text-body-sm text-on-surface-variant">Berlangsung</span>
+</div>
+<p class="text-body-sm text-on-surface-variant mt-1">Gladi Bersih &amp; Musik</p>
+</div>
+</div>
+</div>
+<!-- Active Sessions & History Section -->
+<div class="px-space-gutter mb-space-xl">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md mb-space-md">
+<div>
+<h2 class="text-headline-md font-headline-md text-on-surface">Daftar Sesi Absensi &amp; Riwayat</h2>
+<p class="text-body-sm text-on-surface-variant">Kelola kehadiran berdasarkan sesi latihan, rapat, maupun gladi kotor.</p>
+</div>
+<!-- Filter Tabs -->
+<div class="flex items-center gap-space-xs bg-surface-container-low p-1 rounded-xl border border-surface-container-high">
+<button class="px-space-md py-1.5 rounded-lg bg-primary text-on-primary text-body-sm font-semibold transition-all">Semua Sesi</button>
+<button class="px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface text-body-sm transition-all">Aktif Hari Ini</button>
+<button class="px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface text-body-sm transition-all">Selesai</button>
+</div>
+</div>
+<!-- Sessions Cards Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-md">
+<!-- Session Card 1 (Active) -->
+<div class="bg-surface-container-low rounded-xl p-space-lg flex flex-col justify-between border-l-4 border-secondary shadow-md relative border border-surface-container-high">
+<div>
+<div class="flex items-start justify-between gap-space-sm mb-space-md">
+<div>
+<span class="inline-block px-space-sm py-0.5 rounded text-label-sm bg-secondary text-on-secondary font-bold uppercase mb-2">Gladi Bersih Utama</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Latihan Adegan 1 - 3 &amp; Musik Live</h3>
+</div>
+<span class="flex h-3 w-3 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-secondary"></span>
+</span>
+</div>
+<div class="space-y-space-sm text-body-sm text-on-surface-variant mb-space-lg">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>Hari ini, 15:30 - 17:30 WITA</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="truncate">Aula Utama SMPN 10 Samarinda</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px]">person</span>
+<span>Pembuat: Budi Santoso (Sutradara)</span>
+</div>
+</div>
+<!-- Progress -->
+<div class="mb-space-lg">
+<div class="flex justify-between text-body-sm mb-1">
+<span class="text-on-surface-variant">Pengisian Kehadiran</span>
+<span class="text-secondary font-semibold">28 / 32 Hadir (87.5%)</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 87.5%;"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-md border-t border-surface-container-high">
+<button class="flex-1 py-2 px-space-sm bg-secondary text-on-secondary rounded-lg text-body-sm font-semibold flex items-center justify-center gap-1 hover:opacity-90">
+<span class="material-symbols-outlined text-[16px]">how_to_reg</span> Isi
+          </button>
+<button class="p-2 bg-surface-container-high text-on-surface rounded-lg hover:bg-surface-bright transition-colors" onclick="openQRModal('Gladi Bersih Utama - Adegan 1-3')" title="QR Code Presensi">
+<span class="material-symbols-outlined text-[18px]">qr_code</span>
+</button>
+<button class="p-2 bg-surface-container-high text-on-surface rounded-lg hover:bg-surface-bright transition-colors" title="Lihat Rekap">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</div>
+<!-- Session Card 2 (Active) -->
+<div class="bg-surface-container-low rounded-xl p-space-lg flex flex-col justify-between border-l-4 border-primary shadow-md relative border border-surface-container-high">
+<div>
+<div class="flex items-start justify-between gap-space-sm mb-space-md">
+<div>
+<span class="inline-block px-space-sm py-0.5 rounded text-label-sm bg-primary text-on-primary font-bold uppercase mb-2">Internal Divisi Musik</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Aransemen &amp; Tes Alat Musik Tradisional</h3>
+</div>
+<span class="flex h-3 w-3 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+</span>
+</div>
+<div class="space-y-space-sm text-body-sm text-on-surface-variant mb-space-lg">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>Hari ini, 13:00 - 15:00 WITA</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="truncate">Ruang Kesenian Lt. 2</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px]">person</span>
+<span>Pembuat: Siska Amelia (Koord. Musik)</span>
+</div>
+</div>
+<!-- Progress -->
+<div class="mb-space-lg">
+<div class="flex justify-between text-body-sm mb-1">
+<span class="text-on-surface-variant">Pengisian Kehadiran</span>
+<span class="text-primary font-semibold">8 / 8 Hadir (100%)</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-md border-t border-surface-container-high">
+<button class="flex-1 py-2 px-space-sm bg-primary text-on-primary rounded-lg text-body-sm font-semibold flex items-center justify-center gap-1 hover:opacity-90">
+<span class="material-symbols-outlined text-[16px]">how_to_reg</span> Isi
+          </button>
+<button class="p-2 bg-surface-container-high text-on-surface rounded-lg hover:bg-surface-bright transition-colors" onclick="openQRModal('Internal Divisi Musik')" title="QR Code Presensi">
+<span class="material-symbols-outlined text-[18px]">qr_code</span>
+</button>
+<button class="p-2 bg-surface-container-high text-on-surface rounded-lg hover:bg-surface-bright transition-colors" title="Lihat Rekap">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</div>
+<!-- Session Card 3 (Completed) -->
+<div class="bg-surface-container-low rounded-xl p-space-lg flex flex-col justify-between opacity-80 hover:opacity-100 transition-opacity border border-surface-container-high">
+<div>
+<div class="flex items-start justify-between gap-space-sm mb-space-md">
+<div>
+<span class="inline-block px-space-sm py-0.5 rounded text-label-sm bg-surface-container-high text-on-surface-variant font-bold uppercase mb-2">Rapat Produksi</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Koordinasi Pimpinan &amp; Sutradara</h3>
+</div>
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+</div>
+<div class="space-y-space-sm text-body-sm text-on-surface-variant mb-space-lg">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>Kemarin, 14:00 WITA</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="truncate">Ruang Guru / Daring</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px]">person</span>
+<span>Pembuat: Ahmad Dani (Sekretaris)</span>
+</div>
+</div>
+<!-- Progress -->
+<div class="mb-space-lg">
+<div class="flex justify-between text-body-sm mb-1">
+<span class="text-on-surface-variant">Kehadiran Total</span>
+<span class="text-on-surface font-semibold">12 / 12 Hadir</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-md border-t border-surface-container-high">
+<button class="flex-1 py-2 px-space-sm bg-surface-container-high text-on-surface rounded-lg text-body-sm font-semibold flex items-center justify-center gap-1 hover:bg-surface-bright">
+<span class="material-symbols-outlined text-[16px]">visibility</span> Lihat Rekap Sesi
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Student Matrix Grid & Filters Section (Secretary / Teacher View) -->
+<div class="px-space-gutter mb-space-xl">
+<div class="bg-surface-container-low rounded-2xl p-space-lg shadow-sm border border-surface-container-high">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md mb-space-lg pb-space-md border-b border-surface-container-high">
+<div>
+<div class="flex items-center gap-space-sm mb-1">
+<span class="text-label-sm text-primary font-bold uppercase tracking-wider bg-primary-container px-2 py-0.5 rounded">Tampilan Sekretaris &amp; Guru Pengampu</span>
+</div>
+<h2 class="text-headline-md font-headline-md text-on-surface">Matriks Presensi Siswa vs Tanggal Latihan</h2>
+</div>
+<!-- Quick Filters -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="flex items-center gap-space-xs bg-surface-container px-space-sm py-1.5 rounded-xl border border-surface-container-high">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">filter_list</span>
+<select class="bg-transparent text-body-sm text-on-surface outline-none cursor-pointer">
+<option class="bg-surface-container">Semua Divisi</option>
+<option class="bg-surface-container">Pemain / Aktor</option>
+<option class="bg-surface-container">Divisi Musik</option>
+<option class="bg-surface-container">Divisi Panggung</option>
+<option class="bg-surface-container">Divisi Kostum &amp; Rias</option>
+</select>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container px-space-sm py-1.5 rounded-xl border border-surface-container-high">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">calendar_today</span>
+<select class="bg-transparent text-body-sm text-on-surface outline-none cursor-pointer">
+<option class="bg-surface-container">Oktober 2023 (Pekan 3)</option>
+<option class="bg-surface-container">Oktober 2023 (Pekan 2)</option>
+</select>
+</div>
+<button class="px-space-md py-1.5 bg-primary text-on-primary rounded-xl text-body-sm font-semibold hover:opacity-90 transition-opacity" onclick="alert('Menyimpan perubahan presensi massal...')">
+            Simpan Perubahan
+          </button>
+</div>
+</div>
+<!-- Matrix Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-surface-container-high text-label-md font-label-md text-on-surface-variant uppercase">
+<th class="py-3 px-4">Nama Siswa</th>
+<th class="py-3 px-4">Peran / Divisi</th>
+<th class="py-3 px-4 text-center">12 Okt</th>
+<th class="py-3 px-4 text-center">14 Okt</th>
+<th class="py-3 px-4 text-center">16 Okt</th>
+<th class="py-3 px-4 text-center">18 Okt</th>
+<th class="py-3 px-4 text-center">Akumulasi</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high text-body-sm">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container/50 transition-colors">
+<td class="py-3 px-4 font-semibold text-on-surface">Alya Rahmawati</td>
+<td class="py-3 px-4"><span class="text-secondary bg-secondary-container/20 px-2 py-0.5 rounded text-label-sm">Pemeran Utama</span></td>
+<td class="py-3 px-4 text-center">
+<select class="bg-emerald-950 text-emerald-300 text-label-md px-2 py-1 rounded border-0 outline-none font-semibold text-center">
+<option selected="">Hadir</option>
+<option>Izin</option>
+<option>Sakit</option>
+<option>Alpa</option>
+</select>
+</td>
+<td class="py-3 px-4 text-center">
+<select class="bg-emerald-950 text-emerald-300 text-label-md px-2 py-1 rounded border-0 outline-none font-semibold text-center">
+<option selected="">Hadir</option>
+<option>Izin</option>
+<option>Sakit</option>
+<option>Alpa</option>
+</select>
+</td>
+<td class="py-3 px-4 text-center">
+<select class="bg-emerald-950 text-emerald-300 text-label-md px-2 py-1 rounded border-0 outline-none font-semibold text-center">
+<option selected="">Hadir</option>
+<option>Izin</option>
+<option>Sakit</option>
+<option>Alpa</option>
+</select>
+</td>
+<td class="py-3 px-4 text-center">
+<select class="bg-emerald-950 text-emerald-300 text-label-md px-2 py-1 rounded border-0 outline-none font-semibold text-center">
+<option selected="">Hadir</option>
+<option>Izin</option>
+<option>Sakit</option>
+<option>Alpa</option>
+</select>
+</td>
+<td class="py-3 px-4 text-center font-bold text-emerald-400">100% (4/4)</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container/50 transition-colors">
+<td class="py-3 px-4 font-semibold text-on-surface">Dimas Anggara</td>
+<td class="py-3 px-4"><span class="text-primary bg-primary-container text-on-primary-container px-2 py-0.5 rounded text-label-sm">Divisi Musik</span></td>
+<td class="py-3 px-4 text-center">
+<select class="bg-emerald-950 text-emerald-300 text-label-md px-2 py-1 rounded border-0 outline-none font-semibold text-center">
+<option selected="">Hadir</option>
+<option>Izin</option>
+<option>Sakit</option>
+<option>Alpa</option>
+</select>
+</td>
+<td class="py-3 px-4 text-center">
+<select class="bg-amber-950 text-amber-300 text-label-md px-2 py-1 rounded border-0 outline-none font-semibold text-center">
+<option>Hadir</option>
+<option selected="">Izin</option>
+<option>Sakit</option>
+<option>Alpa</option>
+</select>
+</td>
+<td class="py-3 px-4 text-center">
+<select class="bg-emerald-950 text-emerald-300 text-label-md px-2 py-1 rounded border-0 outline-none font-semibold text-center">
+<option selected="">Hadir</option>
+<option>Izin</option>
+<option>Sakit</option>
+<option>Alpa</option>
+</select>
+</td>
+<td class="py-3 px-4 text-center">
+<select class="bg-emerald-950 text-emerald-300 text-label-md px-2 py-1 rounded border-0 outline-none font-semibold text-center">
+<option selected="">Hadir</option>
+<option>Izin</option>
+<option>Sakit</option>
+<option>Alpa</option>
+</select>
+</td>
+<td class="py-3 px-4 text-center font-bold text-secondary">75% (3/4)</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container/50 transition-colors">
+<td class="py-3 px-4 font-semibold text-on-surface">Siti Aminah</td>
+<td class="py-3 px-4"><span class="text-on-surface-variant bg-surface-container-high px-2 py-0.5 rounded text-label-sm">Kostum &amp; Rias</span></td>
+<td class="py-3 px-4 text-center">
+<select class="bg-emerald-950 text-emerald-300 text-label-md px-2 py-1 rounded border-0 outline-none font-semibold text-center">
+<option selected="">Hadir</option>
+<option>Izin</option>
+<option>Sakit</option>
+<option>Alpa</option>
+</select>
+</td>
+<td class="py-3 px-4 text-center">
+<select class="bg-emerald-950 text-emerald-300 text-label-md px-2 py-1 rounded border-0 outline-none font-semibold text-center">
+<option selected="">Hadir</option>
+<option>Izin</option>
+<option>Sakit</option>
+<option>Alpa</option>
+</select>
+</td>
+<td class="py-3 px-4 text-center">
+<select class="bg-rose-950 text-rose-300 text-label-md px-2 py-1 rounded border-0 outline-none font-semibold text-center">
+<option>Hadir</option>
+<option>Izin</option>
+<option>Sakit</option>
+<option selected="">Sakit</option>
+</select>
+</td>
+<td class="py-3 px-4 text-center">
+<select class="bg-emerald-950 text-emerald-300 text-label-md px-2 py-1 rounded border-0 outline-none font-semibold text-center">
+<option selected="">Hadir</option>
+<option>Izin</option>
+<option>Sakit</option>
+<option>Alpa</option>
+</select>
+</td>
+<td class="py-3 px-4 text-center font-bold text-secondary">75% (3/4)</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container/50 transition-colors">
+<td class="py-3 px-4 font-semibold text-on-surface">Rian Pratama</td>
+<td class="py-3 px-4"><span class="text-secondary bg-secondary-container/20 px-2 py-0.5 rounded text-label-sm">Pemeran Pendukung</span></td>
+<td class="py-3 px-4 text-center">
+<select class="bg-emerald-950 text-emerald-300 text-label-md px-2 py-1 rounded border-0 outline-none font-semibold text-center">
+<option selected="">Hadir</option>
+<option>Izin</option>
+<option>Sakit</option>
+<option>Alpa</option>
+</select>
+</td>
+<td class="py-3 px-4 text-center">
+<select class="bg-emerald-950 text-emerald-300 text-label-md px-2 py-1 rounded border-0 outline-none font-semibold text-center">
+<option selected="">Hadir</option>
+<option>Izin</option>
+<option>Sakit</option>
+<option>Alpa</option>
+</select>
+</td>
+<td class="py-3 px-4 text-center">
+<select class="bg-emerald-950 text-emerald-300 text-label-md px-2 py-1 rounded border-0 outline-none font-semibold text-center">
+<option selected="">Hadir</option>
+<option>Izin</option>
+<option>Sakit</option>
+<option>Alpa</option>
+</select>
+</td>
+<td class="py-3 px-4 text-center">
+<select class="bg-emerald-950 text-emerald-300 text-label-md px-2 py-1 rounded border-0 outline-none font-semibold text-center">
+<option selected="">Hadir</option>
+<option>Izin</option>
+<option>Sakit</option>
+<option>Alpa</option>
+</select>
+</td>
+<td class="py-3 px-4 text-center font-bold text-emerald-400">100% (4/4)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- WhatsApp Integration & Verification Module -->
+<div class="px-space-gutter grid grid-cols-1 lg:grid-cols-2 gap-space-md mb-space-xl">
+<!-- WhatsApp Integration Panel -->
+<div class="bg-surface-container-low rounded-2xl p-space-lg flex flex-col justify-between shadow-sm border border-surface-container-high">
+<div>
+<div class="flex items-center gap-space-sm mb-space-md">
+<div class="w-10 h-10 rounded-xl bg-emerald-950 text-emerald-400 flex items-center justify-center">
+<span class="material-symbols-outlined">chat</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Rekapitulasi via WhatsApp Bot</h3>
+<p class="text-body-sm text-on-surface-variant">Kirim laporan kehadiran otomatis ke grup orang tua &amp; guru pengampu.</p>
+</div>
+</div>
+<p class="text-body-sm text-on-surface-variant mb-space-lg">
+          Bot SP-PPT telah terhubung dengan nomor WhatsApp Koordinator Produksi dan Sekretaris Kelas untuk pengiriman rekapitulasi harian pukul 18:00 WITA.
+        </p>
+<div class="bg-surface-container p-space-md rounded-xl space-y-2 mb-space-lg border border-surface-container-high">
+<div class="flex justify-between text-body-sm">
+<span class="text-on-surface-variant">Status Gateway WA</span>
+<span class="text-emerald-400 font-semibold flex items-center gap-1">● Aktif / Terhubung</span>
+</div>
+<div class="flex justify-between text-body-sm">
+<span class="text-on-surface-variant">Pesan Terkirim Hari Ini</span>
+<span class="text-on-surface font-semibold">4 Laporan Sesi</span>
+</div>
+</div>
+</div>
+<button class="w-full py-2.5 bg-surface-container-high text-on-surface rounded-xl text-body-sm font-semibold hover:bg-surface-bright transition-colors flex items-center justify-center gap-2 border border-surface-container-high">
+<span class="material-symbols-outlined text-[18px]">send</span> Kirim Rekap Manual ke WhatsApp Grup
+      </button>
+</div>
+<!-- Selfie & Location Verification Panel -->
+<div class="bg-surface-container-low rounded-2xl p-space-lg flex flex-col justify-between shadow-sm border border-surface-container-high">
+<div>
+<div class="flex items-center gap-space-sm mb-space-md">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Verifikasi Selfie &amp; Geofencing</h3>
+<p class="text-body-sm text-on-surface-variant">Keamanan kehadiran berbasis lokasi dan foto pementasan.</p>
+</div>
+</div>
+<p class="text-body-sm text-on-surface-variant mb-space-lg">
+          Sesi latihan tertentu memerlukan validasi titik koordinat GPS di area SMPN 10 Samarinda serta swafoto kru menggunakan atribut teater.
+        </p>
+<div class="grid grid-cols-2 gap-space-sm mb-space-lg">
+<div class="bg-surface-container p-space-md rounded-xl border border-surface-container-high">
+<span class="text-label-sm text-on-surface-variant block mb-1">Radius GPS Aktif</span>
+<span class="text-headline-sm font-headline-sm text-secondary">50 Meter</span>
+</div>
+<div class="bg-surface-container p-space-md rounded-xl border border-surface-container-high">
+<span class="text-label-sm text-on-surface-variant block mb-1">Status Verifikasi Foto</span>
+<span class="text-headline-sm font-headline-sm text-emerald-400">Auto-AI Cek</span>
+</div>
+</div>
+</div>
+<button class="w-full py-2.5 bg-surface-container-high text-on-surface rounded-xl text-body-sm font-semibold hover:bg-surface-bright transition-colors flex items-center justify-center gap-2 border border-surface-container-high">
+<span class="material-symbols-outlined text-[18px]">settings</span> Konfigurasi Aturan Validasi
+      </button>
+</div>
+</div>
+<!-- Modal: Buat Sesi Baru (Hidden by default) -->
+<div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-space-gutter hidden" id="newSessionModal">
+<div class="bg-surface-container-low rounded-2xl p-space-xl max-w-lg w-full shadow-2xl relative border border-surface-container-high">
+<button class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface" onclick="closeNewSessionModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-space-xs">Buat Sesi Absensi Baru</h3>
+<p class="text-body-sm text-on-surface-variant mb-space-lg">Pilih jenis kegiatan dan cakupan peserta yang sesuai dengan peran Anda.</p>
+<div class="space-y-space-md">
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-1">Judul Sesi / Kegiatan</label>
+<input class="w-full px-space-md py-2.5 rounded-xl bg-surface-container text-on-surface text-body-md outline-none focus:ring-2 focus:ring-secondary border border-surface-container-high" placeholder="Contoh: Latihan Dialog Adegan 2" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-space-md">
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-1">Jenis Sesi</label>
+<select class="w-full px-space-md py-2.5 rounded-xl bg-surface-container text-on-surface text-body-md outline-none border border-surface-container-high">
+<option>Latihan Utama</option>
+<option>Rapat Produksi</option>
+<option>Gladi Bersih</option>
+<option>Internal Divisi</option>
+</select>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-1">Cakupan Peserta</label>
+<select class="w-full px-space-md py-2.5 rounded-xl bg-surface-container text-on-surface text-body-md outline-none border border-surface-container-high">
+<option>Seluruh Anggota Teater</option>
+<option>Hanya Pemain + Musik (Sutradara)</option>
+<option>Anggota Divisi Saja (Koordinator)</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-md">
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-1">Tanggal</label>
+<input class="w-full px-space-md py-2.5 rounded-xl bg-surface-container text-on-surface text-body-md outline-none border border-surface-container-high" type="date"/>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-1">Jam Mulai</label>
+<input class="w-full px-space-md py-2.5 rounded-xl bg-surface-container text-on-surface text-body-md outline-none border border-surface-container-high" type="time"/>
+</div>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-1">Lokasi Kegiatan</label>
+<input class="w-full px-space-md py-2.5 rounded-xl bg-surface-container text-on-surface text-body-md outline-none border border-surface-container-high" placeholder="Contoh: Panggung Terbuka SMPN 10 Samarinda" type="text"/>
+</div>
+</div>
+<div class="flex items-center justify-end gap-space-sm mt-space-xl">
+<button class="px-space-md py-2 rounded-xl bg-surface-container-high text-on-surface text-body-sm font-semibold" onclick="closeNewSessionModal()">Batal</button>
+<button class="px-space-lg py-2 rounded-xl bg-secondary text-on-secondary text-body-sm font-semibold hover:opacity-90" onclick="alert('Sesi Berhasil Dibuat!'); closeNewSessionModal();">Simpan &amp; Aktifkan</button>
+</div>
+</div>
+</div>
+<!-- Modal: QR Code Presensi (Hidden by default) -->
+<div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-space-gutter hidden" id="qrModal">
+<div class="bg-surface-container-low rounded-2xl p-space-xl max-w-sm w-full shadow-2xl relative text-center border border-surface-container-high">
+<button class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface" onclick="closeQRModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+<span class="text-label-sm text-secondary bg-secondary-container/20 px-3 py-1 rounded-full uppercase tracking-wider inline-block mb-3">Scan Presensi Live</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-space-md" id="qrModalTitle">Gladi Bersih Utama</h3>
+<!-- Simulated QR Container -->
+<div class="bg-white p-6 rounded-2xl inline-block mx-auto mb-space-md shadow-inner">
+<div class="w-48 h-48 bg-slate-950 rounded-lg flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[120px]">qr_code_2</span>
+</div>
+<div class="absolute inset-x-0 top-1/2 h-1 bg-secondary animate-bounce"></div>
+</div>
+</div>
+<p class="text-body-sm text-on-surface-variant mb-space-lg">Arahkan kamera HP siswa ke kode QR di atas untuk melakukan check-in otomatis.</p>
+<button class="w-full py-2.5 bg-primary text-on-primary rounded-xl text-body-sm font-semibold hover:opacity-90" onclick="closeQRModal()">Tutup QR Code</button>
+</div>
+</div>
+<!-- Client-side Interactive Scripts -->
+<script>
+    function openNewSessionModal() {
+      document.getElementById('newSessionModal').classList.remove('hidden');
+    }
+    function closeNewSessionModal() {
+      document.getElementById('newSessionModal').classList.add('hidden');
+    }
+    function openQRModal(title) {
+      if(title) document.getElementById('qrModalTitle').innerText = title;
+      document.getElementById('qrModal').classList.remove('hidden');
+    }
+    function closeQRModal() {
+      document.getElementById('qrModal').classList.add('hidden');
+    }
+  </script>
+</div></main></div><div class="fixed bottom-6 right-6 z-50 flex flex-col gap-space-sm"><button class="flex items-center gap-space-sm px-space-md py-space-sm rounded-full bg-secondary text-on-secondary shadow-lg hover:opacity-90 transition-opacity"><span class="material-symbols-outlined">support</span><span class="text-body-sm font-semibold">Aduan WA</span></button><button class="flex items-center gap-space-sm px-space-md py-space-sm rounded-full bg-primary text-on-primary shadow-lg hover:opacity-90 transition-opacity"><span class="material-symbols-outlined">menu_book</span><span class="text-body-sm font-semibold">Panduan</span></button></div></body></html>

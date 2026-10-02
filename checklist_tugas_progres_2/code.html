@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; background-image: linear-gradient(to bottom, rgba(16, 20, 21, 0.9), rgba(16, 20, 21, 0.95)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuC9gBs4KRDadRyLjwnEeN8tjTHw0RfvChbMg9xn30pT4hqExO7U3fEQVY-iA3c6VqLTanrCUXTw8ipfCxKT4V16eb0TNXWg0Ap1hgrsG5P9ADo-j3edlNFuDx4EMy4sTAZ1T7nx5ll7mompgALrJRHj-XCbEcdk80LXaVTWv16Qvr3POWmyLjxQnAPJkthu5dFoT7abF7NP3L1CZ8XkV6FLS40fWI-syHXOx_jsEhTfryZ1v7XE-T7YE7bZt7jM48mgIEQ'); background-repeat: repeat; background-size: 400px; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-error-container": "#ffdad6", "inverse-on-surface": "#2d3133", "on-primary-fixed-variant": "#444173", "inverse-primary": "#5b598c", "on-background": "#e0e3e5", "surface-container-lowest": "#0b0f10", "on-primary-container": "#8683ba", "primary": "#c4c1fb", "outline": "#928f9a", "on-tertiary": "#002a78", "on-secondary-fixed": "#2f1500", "on-error": "#690005", "surface-dim": "#101415", "surface-container-low": "#191c1e", "on-surface-variant": "#c8c5d0", "primary-container": "#1e1b4b", "inverse-surface": "#e0e3e5", "surface-container": "#1d2022", "background": "#101415", "primary-fixed-dim": "#c4c1fb", "surface-container-highest": "#323537", "surface-bright": "#363a3b", "surface-variant": "#323537", "outline-variant": "#47464f", "surface-container-high": "#272a2c", "surface": "#101415", "tertiary-container": "#001d58", "on-secondary": "#4d2600", "on-surface": "#e0e3e5", "secondary-fixed-dim": "#ffb77d", "secondary": "#ffb77d", "tertiary-fixed-dim": "#b4c5ff", "surface-tint": "#c4c1fb", "secondary-container": "#d97707", "error": "#ffb4ab", "tertiary-fixed": "#dbe1ff", "on-secondary-fixed-variant": "#6e3900", "tertiary": "#b4c5ff", "on-primary": "#2d2a5b", "primary-fixed": "#e3dfff", "on-primary-fixed": "#181445", "secondary-fixed": "#ffdcc3", "on-tertiary-fixed": "#00174b", "error-container": "#93000a", "on-tertiary-fixed-variant": "#003ea8", "on-tertiary-container": "#5382ff", "on-secondary-container": "#432100" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.5rem", "space-xs": "0.25rem", "space-md": "1rem", "space-lg": "1.5rem", "space-xl": "2.5rem", "gutter": "1.5rem", "margin": "2rem" }, "fontFamily": { "body-md": ["Inter"], "label-sm": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-md": ["Inter"], "headline-xl": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "body-lg": ["Inter"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }], "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }] } } } }</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/></head><body class="bg-surface font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col pt-space-lg pb-space-lg"><div class="px-space-lg mb-space-lg flex items-center gap-space-sm"><div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-primary font-headline-md">SP</div><div><h1 class="font-headline-sm text-on-surface">SP-PPT</h1><p class="text-label-sm text-on-surface-variant">SMPN 10 Samarinda</p></div></div><nav class="flex-1 px-space-md space-y-space-xs overflow-y-auto" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined mr-space-md">dashboard</span>Dashboard</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="nilai-saya" href="#"><span class="material-symbols-outlined mr-space-md">grade</span>Nilai Saya / Rekap</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="jadwal" href="#"><span class="material-symbols-outlined mr-space-md">calendar_month</span>Jadwal &amp; Kalender</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="absensi" href="#"><span class="material-symbols-outlined mr-space-md">how_to_reg</span>Absensi</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="checklist-tugas" href="#"><span class="material-symbols-outlined mr-space-md">checklist</span>Checklist Tugas</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="struktur-kerabat" href="#"><span class="material-symbols-outlined mr-space-md">groups</span>Struktur Kerabat Kerja</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="arsip-naskah" href="#"><span class="material-symbols-outlined mr-space-md">folder</span>Arsip Naskah &amp; Dokumen</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="aduan-bantuan" href="#"><span class="material-symbols-outlined mr-space-md">support_agent</span>Aduan &amp; Bantuan</a></nav></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-gutter"><div class="flex items-center gap-space-md"><span class="text-label-md text-secondary bg-secondary-container/20 px-space-sm py-space-xs rounded-full">Seni Budaya &amp; Teater</span></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm"><div class="text-right"><p class="text-body-sm font-semibold text-on-surface">Budi Santoso</p><span class="inline-block px-space-xs py-0.5 text-label-sm rounded bg-secondary text-on-secondary">Sutradara (Emas)</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtSDRxhpWBhj6LuRVKBl129F-qH2HS8aDH8ZPv6Ba9GT1LMe7e0yreFQ4I_7thzjhnx5FA5r1YriNovMuXxxO7Zue7EEhWqk4T3xBkhbSm26WcQ1Dyp04L1JvtgLNXeSSTKuKExCI-ytwZcq7zsKxsaPEy1cN6DrGI2pRGfnseGzmBG4YGQvW3U48L4BfxGatFJyiqXhFXRx4vqtF5I9uGlUkbujTrfpu0acu18MeWk4aXAA5fjMXTvw"/></div></div></header><main class="relative pt-16 bg-transparent min-h-screen"><div class="flex flex-col w-full pb-20 px-space-gutter pt-space-lg">
+<!-- Top Header & Overall Progress Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
+<div>
+<div class="flex items-center gap-space-sm mb-2">
+<span class="text-label-sm text-primary uppercase bg-primary-container px-space-sm py-1 rounded-full font-bold">Tahap 3 dari 5: Latihan Intensif &amp; Gladi</span>
+<span class="text-label-sm text-on-surface-variant">• Deadline Utama: 14 Hari Lagi</span>
+</div>
+<h2 class="font-headline-xl text-on-surface tracking-tight">Checklist Tugas &amp; Bukti Kerja</h2>
+<p class="text-body-md text-on-surface-variant mt-1">Kelola tugas produksi teater SMPN 10 Samarinda, pantau progress harian, dan unggah bukti kerja.</p>
+</div>
+<div class="flex items-center gap-space-md">
+<!-- Role Filter Dropdown Simulation -->
+<div class="flex items-center gap-space-sm bg-surface-container-high px-space-md py-space-sm rounded-xl">
+<span class="material-symbols-outlined text-secondary">filter_list</span>
+<select class="bg-transparent text-on-surface text-body-sm font-semibold outline-none cursor-pointer" id="roleFilter">
+<option class="bg-surface" value="all">Semua Peran / Divisi</option>
+<option class="bg-surface" value="perlengkapan">Divisi Perlengkapan</option>
+<option class="bg-surface" value="pemain">Pemain / Aktor</option>
+<option class="bg-surface" value="koordinator">Koordinator Divisi</option>
+<option class="bg-surface" value="sutradara">Sutradara &amp; Pimpinan</option>
+</select>
+</div>
+<!-- Add New Deadline / Task Button -->
+<button class="flex items-center gap-space-sm bg-secondary text-on-secondary px-space-lg py-space-sm rounded-xl font-headline-sm shadow-lg hover:opacity-90 transition-all" onclick="openNewTaskModal()">
+<span class="material-symbols-outlined">add_task</span>
+<span>Buat Deadline Baru</span>
+</button>
+</div>
+</div>
+<!-- Overall Progress Banner -->
+<div class="bg-surface-container-low/90 backdrop-blur rounded-xl p-space-lg mb-space-xl shadow-lg relative overflow-hidden">
+<div class="absolute -right-10 -bottom-10 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[180px] text-primary">checklist</span>
+</div>
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg relative z-10">
+<div class="space-y-1">
+<span class="text-label-md text-secondary uppercase font-bold tracking-wider">Progress Tahapan Produksi</span>
+<h3 class="font-headline-lg text-on-surface">Pementasan "Legenda Etam" - Divisi Perlengkapan &amp; Properti</h3>
+<p class="text-body-sm text-on-surface-variant">Selesaikan tugas sebelum batas waktu untuk memastikan kelayakan pentas.</p>
+</div>
+<div class="flex items-center gap-space-lg w-full md:w-auto">
+<div class="flex-1 md:w-64">
+<div class="flex justify-between text-body-sm mb-1">
+<span class="font-semibold text-on-surface">Penyelesaian Keseluruhan</span>
+<span class="text-secondary font-bold" id="progressPercent">78%</span>
+</div>
+<div class="w-full h-3 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-500" id="progressBarFill" style="width: 78%"></div>
+</div>
+</div>
+<div class="text-center bg-surface-container px-space-md py-space-sm rounded-xl">
+<span class="block text-headline-md text-primary font-bold">14 / 18</span>
+<span class="text-label-sm text-on-surface-variant">Tugas Selesai</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Stage Selector Tabs for Reset Simulation -->
+<div class="flex items-center gap-space-sm mb-space-lg overflow-x-auto pb-2">
+<span class="text-body-sm font-semibold text-on-surface-variant mr-space-sm whitespace-nowrap">Pilih Tahapan:</span>
+<button class="stage-btn px-space-md py-space-xs rounded-lg text-body-sm font-semibold bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all" data-stage="1" onclick="switchStage(1)">1. Pembentukan &amp; Naskah</button>
+<button class="stage-btn px-space-md py-space-xs rounded-lg text-body-sm font-semibold bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all" data-stage="2" onclick="switchStage(2)">2. Casting &amp; Latihan Meja</button>
+<button class="stage-btn px-space-md py-space-xs rounded-lg text-body-sm font-headline-sm bg-primary text-on-primary transition-all shadow-md" data-stage="3" onclick="switchStage(3)">3. Latihan Intensif &amp; Gladi</button>
+<button class="stage-btn px-space-md py-space-xs rounded-lg text-body-sm font-semibold bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all" data-stage="4" onclick="switchStage(4)">4. Pementasan Utama</button>
+<button class="stage-btn px-space-md py-space-xs rounded-lg text-body-sm font-semibold bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all" data-stage="5" onclick="switchStage(5)">5. Evaluasi &amp; Laporan</button>
+</div>
+<!-- Interactive Kanban Board -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-md items-start">
+<!-- Column 1: To Do / Belum Dikerjakan -->
+<div class="bg-surface-container-low/90 backdrop-blur rounded-xl p-space-md flex flex-col gap-space-md min-h-[500px]">
+<div class="flex items-center justify-between pb-space-xs border-b border-surface-container-highest">
+<div class="flex items-center gap-space-sm">
+<span class="w-3 h-3 rounded-full bg-outline"></span>
+<h4 class="font-headline-sm text-on-surface">Belum Dikerjakan</h4>
+</div>
+<span class="text-label-md bg-surface-container px-2 py-0.5 rounded-full text-on-surface-variant font-bold">2</span>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- Task Card 1 -->
+<div class="bg-surface-container rounded-xl p-space-md shadow-sm hover:shadow-md transition-all cursor-pointer group" onclick="openTaskDetail('task-1')">
+<div class="flex items-start justify-between gap-space-sm mb-2">
+<span class="text-label-sm bg-error-container text-on-error-container px-2 py-0.5 rounded font-bold">Kritis</span>
+<span class="text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> 2 Hari</span>
+</div>
+<h5 class="font-headline-sm text-on-surface group-hover:text-primary transition-colors">Pengadaan Kain Dekorasi Panggung Utama</h5>
+<p class="text-body-sm text-on-surface-variant line-clamp-2 mt-1">Membeli dan menyiapkan kain hitam beludru sepanjang 15 meter untuk latar belakang panggung.</p>
+<div class="mt-4 pt-3 border-t border-surface-container-highest flex items-center justify-between">
+<div class="flex items-center gap-2">
+<img class="w-6 h-6 rounded-full object-cover" data-alt="Avatar portrait of a smiling Indonesian student crew member with short hair, wearing casual dark attire." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2lbwyA85TiHIyxk8rQHd7K1VSPOZVbLKjhoU9EOQeLrW3FSr-K2HEUTGXQzOmmhN9PKyW1RHFjAN49ElywmVRhG1ClVcctjFG4U0ism4uOGYmZjLwtJ1rXnKblKSabNkkhLaBejbLOGqNDK6qac5Kh9Pkagnusly8AshJ7NE7Ey8RT7JxI7FPnAFvu9N53jCXhEw_vebf2LsW5Ck2ohsk-zx2itimcoidevt5ssZhKyK2cp3yLmT4VQ"/>
+<span class="text-body-sm text-on-surface-variant">Ahmad Yani</span>
+</div>
+<button class="px-2 py-1 bg-primary text-on-primary rounded text-label-sm font-bold hover:opacity-90" onclick="event.stopPropagation(); markDone(this)">Selesai</button>
+</div>
+</div>
+<!-- Task Card 2 -->
+<div class="bg-surface-container rounded-xl p-space-md shadow-sm hover:shadow-md transition-all cursor-pointer group" onclick="openTaskDetail('task-2')">
+<div class="flex items-start justify-between gap-space-sm mb-2">
+<span class="text-label-sm bg-secondary-container/30 text-secondary px-2 py-0.5 rounded font-bold">Sedang</span>
+<span class="text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> 5 Hari</span>
+</div>
+<h5 class="font-headline-sm text-on-surface group-hover:text-primary transition-colors">Pengecekan Kabel Sound System</h5>
+<p class="text-body-sm text-on-surface-variant line-clamp-2 mt-1">Memastikan seluruh mic wireless dan kabel XLR berfungsi dengan baik tanpa dengung.</p>
+<div class="mt-4 pt-3 border-t border-surface-container-highest flex items-center justify-between">
+<div class="flex items-center gap-2">
+<img class="w-6 h-6 rounded-full object-cover" data-alt="Avatar portrait of a female student coordinator with hijab, smiling warmly." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHAu05MRFB1OoFVF55MMpnbd3lb-OPsYyMhyQFaDegznu2GO6cHpwrSbxuOhyx0vQnN7GlGseH-DTg8q7IDZVGjUFP3u19UTM1CmpFBQhYnKBgUMaTWLYILof5KrUlSY2ajUW6C-a1bLLOCyP8swSE69Y6Z665NDMjH6ADpwvPyy4_NK_G42pK57Y7pe2JzLcm81D8OZ5g7nKI6pI9V62ittbzzfqblOgj28OQ3rLbvbzgTtL0zqWBig"/>
+<span class="text-body-sm text-on-surface-variant">Siti Rahma</span>
+</div>
+<button class="px-2 py-1 bg-primary text-on-primary rounded text-label-sm font-bold hover:opacity-90" onclick="event.stopPropagation(); markDone(this)">Selesai</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Column 2: In Progress / Sedang Dikerjakan -->
+<div class="bg-surface-container-low/90 backdrop-blur rounded-xl p-space-md flex flex-col gap-space-md min-h-[500px]">
+<div class="flex items-center justify-between pb-space-xs border-b border-surface-container-highest">
+<div class="flex items-center gap-space-sm">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<h4 class="font-headline-sm text-on-surface">Sedang Dikerjakan</h4>
+</div>
+<span class="text-label-md bg-surface-container px-2 py-0.5 rounded-full text-on-surface-variant font-bold">1</span>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- Task Card 3 -->
+<div class="bg-surface-container rounded-xl p-space-md shadow-sm hover:shadow-md transition-all cursor-pointer group border-l-4 border-secondary" onclick="openTaskDetail('task-3')">
+<div class="flex items-start justify-between gap-space-sm mb-2">
+<span class="text-label-sm bg-primary-container text-on-primary-container px-2 py-0.5 rounded font-bold">Tinggi</span>
+<span class="text-label-sm text-secondary flex items-center gap-1 font-bold"><span class="material-symbols-outlined text-[14px]">timer</span> 12 Jam Lagi</span>
+</div>
+<h5 class="font-headline-sm text-on-surface group-hover:text-primary transition-colors">Pembuatan Properti Tombak Kayu</h5>
+<p class="text-body-sm text-on-surface-variant line-clamp-2 mt-1">Merangkai 5 buah replika tombak dari pipa PVC dan cat cokelat kayu.</p>
+<!-- Upload proof preview indicator -->
+<div class="mt-3 bg-surface-container-high p-2 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">attachment</span>
+<span class="text-label-sm text-on-surface">1 Foto Bukti Terlampir</span>
+</div>
+<span class="text-label-sm text-secondary font-bold">Menunggu Verifikasi</span>
+</div>
+<div class="mt-4 pt-3 border-t border-surface-container-highest flex items-center justify-between">
+<div class="flex items-center gap-2">
+<img class="w-6 h-6 rounded-full object-cover" data-alt="Avatar portrait of a male student art crew member." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeSbznaygoTbb5SUWRC466cgUZUhf4va3KrJHmuduON-1_YpQsn7g7bihv7vmpA3ZVl6kKL-qRnZapFKnOHIMajW8dYsTq75XySGugY02kRnbO3nSJ3bb0KL5cpJlzjasKLNQXwKkd1CLMFowdikowfK3lkOFZng41RjVXENBa4jNU4KZXXAnyowtIUKsOXoIu5_qQVOxRk75o2GDIDfA-v9I_nZ7fHcWLs1zc_ZKUvu6VJPdpfgzdMA"/>
+<span class="text-body-sm text-on-surface-variant">Budi Santoso</span>
+</div>
+<button class="px-2 py-1 bg-secondary text-on-secondary rounded text-label-sm font-bold hover:opacity-90" onclick="event.stopPropagation(); openTaskDetail('task-3')">Detail &amp; Aksi</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Column 3: Done / Selesai -->
+<div class="bg-surface-container-low/90 backdrop-blur rounded-xl p-space-md flex flex-col gap-space-md min-h-[500px]">
+<div class="flex items-center justify-between pb-space-xs border-b border-surface-container-highest">
+<div class="flex items-center gap-space-sm">
+<span class="w-3 h-3 rounded-full bg-green-500"></span>
+<h4 class="font-headline-sm text-on-surface">Selesai &amp; Diverifikasi</h4>
+</div>
+<span class="text-label-md bg-surface-container px-2 py-0.5 rounded-full text-on-surface-variant font-bold">1</span>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- Task Card 4 -->
+<div class="bg-surface-container rounded-xl p-space-md shadow-sm opacity-90 cursor-pointer" onclick="openTaskDetail('task-4')">
+<div class="flex items-start justify-between gap-space-sm mb-2">
+<span class="text-label-sm bg-green-950 text-green-300 px-2 py-0.5 rounded font-bold flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">check</span> Terverifikasi Guru</span>
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<h5 class="font-headline-sm text-on-surface line-through text-on-surface-variant">Penyusunan Naskah Dialog Babak 1</h5>
+<p class="text-body-sm text-on-surface-variant line-clamp-2 mt-1">Finalisasi naskah dialog tokoh utama dan penyesuaian durasi pentas.</p>
+<div class="mt-4 pt-3 border-t border-surface-container-highest flex items-center justify-between">
+<span class="text-label-sm text-green-400">Rating: 5.0 (Sempurna)</span>
+<span class="text-label-sm text-on-surface-variant">Pak Joko (Guru)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Column 4: Blocked / Terlewat -->
+<div class="bg-surface-container-low/90 backdrop-blur rounded-xl p-space-md flex flex-col gap-space-md min-h-[500px]">
+<div class="flex items-center justify-between pb-space-xs border-b border-surface-container-highest">
+<div class="flex items-center gap-space-sm">
+<span class="w-3 h-3 rounded-full bg-error"></span>
+<h4 class="font-headline-sm text-on-surface">Terlewat / Blocked</h4>
+</div>
+<span class="text-label-md bg-surface-container px-2 py-0.5 rounded-full text-on-surface-variant font-bold">1</span>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- Task Card 5 -->
+<div class="bg-surface-container rounded-xl p-space-md shadow-sm border-l-4 border-error cursor-pointer" onclick="openTaskDetail('task-5')">
+<div class="flex items-start justify-between gap-space-sm mb-2">
+<span class="text-label-sm bg-error-container text-on-error-container px-2 py-0.5 rounded font-bold">Terlewat 1 Hari</span>
+<span class="material-symbols-outlined text-error text-[18px]">error</span>
+</div>
+<h5 class="font-headline-sm text-on-surface">Peminjaman Ruang Aula Utama untuk Gladi</h5>
+<p class="text-body-sm text-on-surface-variant line-clamp-2 mt-1">Mengajukan surat izin peminjaman aula sekolah kepada bagian sarpras.</p>
+<div class="mt-4 pt-3 border-t border-surface-container-highest flex items-center justify-between">
+<button class="px-2 py-1 bg-surface-container-high text-secondary rounded text-label-sm font-bold hover:bg-surface-container-highest flex items-center gap-1" onclick="event.stopPropagation(); alert('Permohonan bantuan diajukan ke Pengampu')">
+<span class="material-symbols-outlined text-[14px]">support_agent</span> Ajukan Bantuan
+            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Detailed Task Modal (Hidden by Default, triggered on card click) -->
+<div class="fixed inset-0 bg-background/80 backdrop-blur-md z-50 flex items-center justify-center p-space-md hidden" id="taskModal">
+<div class="bg-surface-container-low rounded-2xl w-full max-w-2xl overflow-hidden shadow-2xl border border-surface-container-highest animate-in fade-in zoom-in-95 duration-200">
+<!-- Modal Header -->
+<div class="p-space-lg bg-surface-container flex items-center justify-between">
+<div>
+<span class="text-label-sm bg-primary-container text-on-primary-container px-2 py-0.5 rounded font-bold" id="modalTaskBadge">Prioritas Tinggi</span>
+<h3 class="font-headline-lg text-on-surface mt-1" id="modalTaskTitle">Pembuatan Properti Tombak Kayu</h3>
+</div>
+<button class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface hover:bg-surface-container-highest transition-colors" onclick="closeTaskModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<div class="p-space-lg space-y-space-lg max-h-[716px] overflow-y-auto">
+<!-- Description -->
+<div>
+<h4 class="text-label-md text-on-surface-variant uppercase mb-1">Deskripsi Tugas</h4>
+<p class="text-body-md text-on-surface" id="modalTaskDesc">Merangkai 5 buah replika tombak dari pipa PVC dan cat cokelat kayu. Pastikan ujung tombak tumpul demi keamanan pemain di atas panggung.</p>
+</div>
+<!-- Deadline & Countdown -->
+<div class="grid grid-cols-2 gap-space-md bg-surface-container p-space-md rounded-xl">
+<div>
+<span class="text-label-sm text-on-surface-variant block">Batas Waktu (Deadline)</span>
+<span class="text-body-lg font-bold text-secondary flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined">timer</span> 12 Jam 45 Menit Lagi
+            </span>
+</div>
+<div>
+<span class="text-label-sm text-on-surface-variant block">Penanggung Jawab</span>
+<span class="text-body-lg font-semibold text-on-surface mt-1">Budi Santoso (Sutradara / Anggota)</span>
+</div>
+</div>
+<!-- Proof Upload Section -->
+<div>
+<h4 class="text-label-md text-on-surface-variant uppercase mb-2">Unggah Bukti Hasil Kerja (Foto/Dokumen)</h4>
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-space-lg text-center hover:border-primary transition-colors cursor-pointer bg-surface-container/50">
+<span class="material-symbols-outlined text-4xl text-primary mb-2">cloud_upload</span>
+<p class="text-body-md font-semibold text-on-surface">Seret file ke sini atau <span class="text-primary underline">telusuri perangkat</span></p>
+<p class="text-label-sm text-on-surface-variant mt-1">Maksimal ukuran file 10MB (Format: JPG, PNG, PDF)</p>
+</div>
+<!-- Uploaded Preview List -->
+<div class="mt-3 flex items-center justify-between bg-surface-container p-space-sm rounded-xl">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary">image</span>
+<span class="text-body-sm text-on-surface font-medium">foto_tombak_jadi_v1.jpg</span>
+<span class="text-label-sm text-on-surface-variant">(2.4 MB)</span>
+</div>
+<button class="text-error hover:opacity-80 text-label-sm font-bold">Hapus</button>
+</div>
+</div>
+<!-- Verification & Teacher Comments (Feature 5) -->
+<div class="bg-surface-container p-space-md rounded-xl space-y-space-md">
+<div class="flex items-center justify-between">
+<h4 class="font-headline-sm text-on-surface">Verifikasi &amp; Komentar Koordinator / Guru Pengampu</h4>
+<span class="text-label-sm bg-secondary text-on-secondary px-2 py-0.5 rounded font-bold">Menunggu Review</span>
+</div>
+<!-- Existing Comment Thread -->
+<div class="space-y-space-sm">
+<div class="bg-surface-container-low p-3 rounded-lg space-y-1">
+<div class="flex items-center justify-between">
+<span class="text-body-sm font-semibold text-primary">Pak Joko (Guru Pengampu Seni Budaya)</span>
+<span class="text-label-sm text-on-surface-variant">Hari ini, 10:20 WITA</span>
+</div>
+<p class="text-body-sm text-on-surface">Bagus bentuknya, tapi pastikan catnya sudah benar-benar kering sebelum dibawa ke aula agar tidak luntur ke kostum.</p>
+<!-- Rating Given -->
+<div class="flex items-center gap-1 pt-2">
+<span class="text-label-sm text-on-surface-variant mr-2">Penilaian Sementara:</span>
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]">star</span>
+</div>
+<span class="text-label-sm text-on-surface font-bold ml-1">4.0 / 5.0</span>
+</div>
+</div>
+</div>
+<!-- Add Comment Input Box for Coordinator / Teacher -->
+<div class="flex gap-space-sm">
+<input class="flex-1 bg-surface-container-low border border-outline-variant rounded-xl px-space-md py-space-sm text-body-sm text-on-surface focus:border-primary outline-none" placeholder="Tulis komentar atau permintaan revisi..." type="text"/>
+<button class="px-space-md py-space-sm bg-primary text-on-primary rounded-xl font-headline-sm hover:opacity-90 transition-all">Kirim</button>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="p-space-md bg-surface-container flex items-center justify-between">
+<button class="flex items-center gap-1 text-secondary text-body-sm font-semibold hover:underline" onclick="requestHelp()">
+<span class="material-symbols-outlined text-[18px]">support_agent</span> Ajukan Bantuan Kendala
+        </button>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-space-sm bg-surface-container-high text-on-surface rounded-xl text-body-sm font-semibold hover:bg-surface-container-highest" onclick="closeTaskModal()">Tutup</button>
+<button class="px-space-lg py-space-sm bg-secondary text-on-secondary rounded-xl text-body-sm font-headline-sm hover:opacity-90 shadow-md" onclick="submitTaskCompletion()">Tandai Selesai</button>
+</div>
+</div>
+</div>
+</div>
+<!-- New Task Modal (Feature 6) -->
+<div class="fixed inset-0 bg-background/80 backdrop-blur-md z-50 flex items-center justify-center p-space-md hidden" id="newTaskModal">
+<div class="bg-surface-container-low rounded-2xl w-full max-w-xl overflow-hidden shadow-2xl border border-surface-container-highest animate-in fade-in zoom-in-95 duration-200">
+<div class="p-space-lg bg-surface-container flex items-center justify-between">
+<h3 class="font-headline-lg text-on-surface">Buat Deadline / Tugas Baru</h3>
+<button class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface hover:bg-surface-container-highest transition-colors" onclick="closeNewTaskModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-space-lg space-y-space-md">
+<div>
+<label class="text-label-md text-on-surface-variant block mb-1">Judul Tugas</label>
+<input class="w-full bg-surface-container border border-outline-variant rounded-xl px-space-md py-space-sm text-body-md text-on-surface focus:border-primary outline-none" placeholder="Contoh: Pembuatan Poster Publikasi Pentas" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-space-md">
+<div>
+<label class="text-label-md text-on-surface-variant block mb-1">Divisi / Peran Terkait</label>
+<select class="w-full bg-surface-container border border-outline-variant rounded-xl px-space-md py-space-sm text-body-md text-on-surface focus:border-primary outline-none">
+<option>Divisi Perlengkapan</option>
+<option>Divisi Aktor / Pemain</option>
+<option>Divisi Musik &amp; Sound</option>
+<option>Koordinator Umum</option>
+</select>
+</div>
+<div>
+<label class="text-label-md text-on-surface-variant block mb-1">Prioritas</label>
+<select class="w-full bg-surface-container border border-outline-variant rounded-xl px-space-md py-space-sm text-body-md text-on-surface focus:border-primary outline-none">
+<option>Rendah</option>
+<option>Sedang</option>
+<option>Tinggi</option>
+<option>Kritis</option>
+</select>
+</div>
+</div>
+<div>
+<label class="text-label-md text-on-surface-variant block mb-1">Batas Waktu (Deadline)</label>
+<input class="w-full bg-surface-container border border-outline-variant rounded-xl px-space-md py-space-sm text-body-md text-on-surface focus:border-primary outline-none" type="date"/>
+</div>
+<div>
+<label class="text-label-md text-on-surface-variant block mb-1">Deskripsi Lengkap</label>
+<textarea class="w-full bg-surface-container border border-outline-variant rounded-xl px-space-md py-space-sm text-body-md text-on-surface focus:border-primary outline-none" placeholder="Jelaskan detail instruksi tugas..." rows="3"></textarea>
+</div>
+</div>
+<div class="p-space-md bg-surface-container flex items-center justify-end gap-space-sm">
+<button class="px-space-md py-space-sm bg-surface-container-high text-on-surface rounded-xl text-body-sm font-semibold" onclick="closeNewTaskModal()">Batal</button>
+<button class="px-space-lg py-space-sm bg-secondary text-on-secondary rounded-xl text-body-sm font-headline-sm hover:opacity-90" onclick="saveNewTask()">Simpan &amp; Publikasikan</button>
+</div>
+</div>
+</div>
+<!-- Client-side Interactive Script -->
+<script>
+    function openTaskDetail(taskId) {
+      document.getElementById('taskModal').classList.remove('hidden');
+    }
+
+    function closeTaskModal() {
+      document.getElementById('taskModal').classList.add('hidden');
+    }
+
+    function openNewTaskModal() {
+      document.getElementById('newTaskModal').classList.remove('hidden');
+    }
+
+    function closeNewTaskModal() {
+      document.getElementById('newTaskModal').classList.add('hidden');
+    }
+
+    function markDone(btn) {
+      const card = btn.closest('.bg-surface-container');
+      card.style.opacity = '0.5';
+      btn.textContent = 'Selesai!';
+      btn.disabled = true;
+      alert('Tugas ditandai selesai! Menunggu verifikasi koordinator.');
+    }
+
+    function switchStage(stageNum) {
+      document.querySelectorAll('.stage-btn').forEach(btn => {
+        btn.classList.remove('bg-primary', 'text-on-primary', 'font-headline-sm', 'shadow-md');
+        btn.classList.add('bg-surface-container', 'text-on-surface-variant');
+      });
+      const activeBtn = document.querySelector(`[data-stage="${stageNum}"]`);
+      activeBtn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+      activeBtn.classList.add('bg-primary', 'text-on-primary', 'font-headline-sm', 'shadow-md');
+      
+      // Simulate progress reset for stage demo
+      const randomProgress = [45, 20, 78, 90, 10%][stageNum - 1] || 60;
+      document.getElementById('progressPercent').textContent = randomProgress + '%';
+      document.getElementById('progressBarFill').style.width = randomProgress + '%';
+    }
+
+    function submitTaskCompletion() {
+      alert('Bukti kerja berhasil dikirim dan masuk antrean verifikasi Guru Pengampu / Koordinator.');
+      closeTaskModal();
+    }
+
+    function requestHelp() {
+      alert('Permohonan bantuan via WhatsApp terhubung ke Guru Pengampu Seni Budaya.');
+    }
+
+    function saveNewTask() {
+      alert('Tugas baru berhasil dibuat dan didistribusikan ke anggota divisi!');
+      closeNewTaskModal();
+    }
+  </script>
+</div></main></div><div class="fixed bottom-6 right-6 z-50 flex flex-col gap-space-sm"><button class="flex items-center gap-space-sm px-space-md py-space-sm rounded-full bg-secondary text-on-secondary shadow-lg hover:opacity-90 transition-opacity"><span class="material-symbols-outlined">support</span><span class="text-body-sm font-semibold">Aduan WA</span></button><button class="flex items-center gap-space-sm px-space-md py-space-sm rounded-full bg-primary text-on-primary shadow-lg hover:opacity-90 transition-opacity"><span class="material-symbols-outlined">menu_book</span><span class="text-body-sm font-semibold">Panduan</span></button></div></body></html>

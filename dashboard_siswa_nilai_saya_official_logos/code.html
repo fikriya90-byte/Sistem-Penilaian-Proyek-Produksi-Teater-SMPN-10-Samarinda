@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-error-container": "#ffdad6", "inverse-on-surface": "#2d3133", "on-primary-fixed-variant": "#444173", "inverse-primary": "#5b598c", "on-background": "#e0e3e5", "surface-container-lowest": "#0b0f10", "on-primary-container": "#8683ba", "primary": "#c4c1fb", "outline": "#928f9a", "on-tertiary": "#002a78", "on-secondary-fixed": "#2f1500", "on-error": "#690005", "surface-dim": "#101415", "surface-container-low": "#191c1e", "on-surface-variant": "#c8c5d0", "primary-container": "#1e1b4b", "inverse-surface": "#e0e3e5", "surface-container": "#1d2022", "background": "#101415", "primary-fixed-dim": "#c4c1fb", "surface-container-highest": "#323537", "surface-bright": "#363a3b", "surface-variant": "#323537", "outline-variant": "#47464f", "surface-container-high": "#272a2c", "surface": "#101415", "tertiary-container": "#001d58", "on-secondary": "#4d2600", "on-surface": "#e0e3e5", "secondary-fixed-dim": "#ffb77d", "secondary": "#ffb77d", "tertiary-fixed-dim": "#b4c5ff", "surface-tint": "#c4c1fb", "secondary-container": "#d97707", "error": "#ffb4ab", "tertiary-fixed": "#dbe1ff", "on-secondary-fixed-variant": "#6e3900", "tertiary": "#b4c5ff", "on-primary": "#2d2a5b", "primary-fixed": "#e3dfff", "on-primary-fixed": "#181445", "secondary-fixed": "#ffdcc3", "on-tertiary-fixed": "#00174b", "error-container": "#93000a", "on-tertiary-fixed-variant": "#003ea8", "on-tertiary-container": "#5382ff", "on-secondary-container": "#432100" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.5rem", "space-xs": "0.25rem", "space-md": "1rem", "space-lg": "1.5rem", "space-xl": "2.5rem", "gutter": "1.5rem", "margin": "2rem" }, "fontFamily": { "body-md": ["Inter"], "label-sm": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-md": ["Inter"], "headline-xl": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "body-lg": ["Inter"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }], "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }] } } } }</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/></head><body class="bg-surface font-body-md text-on-surface relative min-h-screen" style="background-image: linear-gradient(to bottom, rgba(16, 20, 21, 0.92), rgba(16, 20, 21, 0.98)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuAZ4uYbB3EEqHMEkco-RkSpSiQ-93V5XeECkY2pUgAHG5wgrJJbnNniZZ3Z5EwjVBg4rpJIMOEYLYwENhLfKHGMlLNfILYu01HL2vEzzbD5-FQJdWZboRvBv6Dl8dhB2i6W3qIFtnITYg5_ejfAlD-KqPxOvkJOVPZ7zyX3Cs0wRav0BVrY9IL_-Et7F30qG9LutY65iG61aywG3pmEqTV9guIId0pa9QyzO6R3NrenmSKWfGOT_DMlY7c4SZBAnd4GzkY'); background-size: cover; background-position: center; background-attachment: fixed;"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low/95 backdrop-blur-md z-50 flex flex-col pt-space-lg pb-space-lg"><div class="px-space-lg mb-space-lg flex items-center gap-space-sm"><div class="flex items-center gap-1"><img alt="Mapel Logo" class="w-10 h-10 rounded-xl object-cover bg-primary-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ4uYbB3EEqHMEkco-RkSpSiQ-93V5XeECkY2pUgAHG5wgrJJbnNniZZ3Z5EwjVBg4rpJIMOEYLYwENhLfKHGMlLNfILYu01HL2vEzzbD5-FQJdWZboRvBv6Dl8dhB2i6W3qIFtnITYg5_ejfAlD-KqPxOvkJOVPZ7zyX3Cs0wRav0BVrY9IL_-Et7F30qG9LutY65iG61aywG3pmEqTV9guIId0pa9QyzO6R3NrenmSKWfGOT_DMlY7c4SZBAnd4GzkY"/><img alt="School Logo" class="w-10 h-10 rounded-xl object-cover bg-primary-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsbu-JDywmx40dviSW2vvQDKHBAkW146E-5OoB-T2XhtKHxsClktEshKuejLTAeMDE4TT6sqRJkBTG8lhogymGDM8Lcvy7AVAJIv9FJzNTrP3CgUj8647ijmSYRQulWoXkI7GTI4drNzc9KWERReDCi5vdrVYkVhHg89wzBq_JsntM94RFEIJDItFkHVgW61CpvcFAVXi7BAsHTy3YOtXZHdKrqCB1Z2gQLtNEXuV_-8n1kiAO94AfrA"/></div><div><h1 class="font-headline-sm text-on-surface">SP-PPT</h1><p class="text-label-sm text-on-surface-variant">SMPN 10 Samarinda</p></div></div><nav class="flex-1 px-space-md space-y-space-xs overflow-y-auto" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined mr-space-md">dashboard</span>Dashboard</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="nilai-saya" href="#"><span class="material-symbols-outlined mr-space-md">grade</span>Nilai Saya / Rekap</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="jadwal" href="#"><span class="material-symbols-outlined mr-space-md">calendar_month</span>Jadwal &amp; Kalender</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="absensi" href="#"><span class="material-symbols-outlined mr-space-md">how_to_reg</span>Absensi</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="checklist-tugas" href="#"><span class="material-symbols-outlined mr-space-md">checklist</span>Checklist Tugas</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="struktur-kerabat" href="#"><span class="material-symbols-outlined mr-space-md">groups</span>Struktur Kerabat Kerja</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="arsip-naskah" href="#"><span class="material-symbols-outlined mr-space-md">folder</span>Arsip Naskah &amp; Dokumen</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="aduan-bantuan" href="#"><span class="material-symbols-outlined mr-space-md">support_agent</span>Aduan &amp; Bantuan</a></nav></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-gutter"><div class="flex items-center gap-space-md"><span class="text-label-md text-secondary bg-secondary-container/20 px-space-sm py-space-xs rounded-full">Seni Budaya &amp; Teater</span></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm"><div class="text-right"><p class="text-body-sm font-semibold text-on-surface">Budi Santoso</p><span class="inline-block px-space-xs py-0.5 text-label-sm rounded bg-secondary text-on-secondary">Sutradara (Emas)</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsbu-JDywmx40dviSW2vvQDKHBAkW146E-5OoB-T2XhtKHxsClktEshKuejLTAeMDE4TT6sqRJkBTG8lhogymGDM8Lcvy7AVAJIv9FJzNTrP3CgUj8647ijmSYRQulWoXkI7GTI4drNzc9KWERReDCi5vdrVYkVhHg89wzBq_JsntM94RFEIJDItFkHVgW61CpvcFAVXi7BAsHTy3YOtXZHdKrqCB1Z2gQLtNEXuV_-8n1kiAO94AfrA"/></div></div></header><main class="relative pt-16 bg-transparent min-h-screen"><div class="flex flex-col w-full pb-24">
+<!-- Hero / Profile Greeting Section -->
+<section class="relative px-space-gutter pt-space-xl pb-space-lg overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-primary-container/30 via-transparent to-surface-container/50 pointer-events-none"></div>
+<div class="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg">
+<div class="flex items-center gap-space-lg">
+<div class="relative">
+<img class="w-20 h-20 rounded-2xl object-cover shadow-xl ring-2 ring-primary/30" data-alt="Portrait of an Indonesian middle school student acting as a theater director, dramatic stage lighting, rich indigo and gold tones, cinematic composition" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADlij_KvNUSRXufE7nLy0lf9dBi2kxIFlS0A1eAHIeZsxYktRoXTPAdBwuTVnON8v1t-61GidW2dPISRr-dmpNJ_HH3IieB8EHbuegRiznTHirxpjvQPvmyr9y0j0LmF1Mg56QEGZE0DMCcLR-RPv-ZyYVAkyJAbwvi-R8cb_k-luSrcIVnn_U6BfbbFw9crmeoCs8ZZip62i05LlomNHEU6aA_Pu4vk2wBMLQYhdjsxSRFMEfgQ3aOw"/>
+<span class="absolute -bottom-2 -right-2 bg-secondary text-on-secondary text-label-sm px-space-xs py-0.5 rounded-full font-bold shadow-md">EMAS</span>
+</div>
+<div>
+<div class="flex items-center gap-space-sm mb-1">
+<span class="text-label-md text-primary font-mono uppercase tracking-wider">ID: 2023-SMP10-042</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="text-label-md text-secondary">Sutradara Utama</span>
+</div>
+<h2 class="font-headline-xl text-on-surface mb-1">Selamat Pagi, Budi Santoso! 🎭</h2>
+<p class="text-body-md text-on-surface-variant">Pementasan "Lakon Semar Gugat" memasuki tahap Gladi Bersih. Performa Anda memimpin tim dinilai sangat baik.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<button class="flex items-center gap-space-sm bg-primary text-on-primary px-space-lg py-space-md rounded-xl font-headline-sm shadow-lg hover:opacity-90 transition-all transform hover:-translate-y-0.5" onclick="downloadReport()">
+<span class="material-symbols-outlined">download</span>
+<span>Unduh Rapor PDF (Kop Resmi)</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Metrics Grid -->
+<section class="px-space-gutter mb-space-xl">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<div class="bg-surface-container-low/90 backdrop-blur-md p-space-lg rounded-2xl shadow-md flex flex-col justify-between relative overflow-hidden">
+<div class="absolute right-0 top-0 translate-x-4 -translate-y-4 w-24 h-24 bg-primary/5 rounded-full blur-xl pointer-events-none"></div>
+<div>
+<p class="text-label-md text-on-surface-variant uppercase tracking-wider mb-space-xs">Nilai Akhir Komposit</p>
+<div class="flex items-baseline gap-space-sm">
+<span class="font-headline-xl text-primary text-4xl">92.4</span>
+<span class="text-body-sm text-secondary font-semibold">Predikat A+</span>
+</div>
+</div>
+<div class="mt-space-md flex items-center justify-between text-label-sm text-on-surface-variant">
+<span>Bobot Guru (50%)</span>
+<span class="text-primary font-bold">95.0</span>
+</div>
+</div>
+<div class="bg-surface-container-low/90 backdrop-blur-md p-space-lg rounded-2xl shadow-md flex flex-col justify-between relative overflow-hidden">
+<div class="absolute right-0 top-0 translate-x-4 -translate-y-4 w-24 h-24 bg-secondary/5 rounded-full blur-xl pointer-events-none"></div>
+<div>
+<p class="text-label-md text-on-surface-variant uppercase tracking-wider mb-space-xs">Tahapan Produksi</p>
+<div class="flex items-baseline gap-space-sm">
+<span class="font-headline-xl text-secondary text-4xl">5/5</span>
+<span class="text-body-sm text-on-surface">Gladi Bersih</span>
+</div>
+</div>
+<div class="mt-space-md w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 100%"></div>
+</div>
+</div>
+<div class="bg-surface-container-low/90 backdrop-blur-md p-space-lg rounded-2xl shadow-md flex flex-col justify-between relative overflow-hidden">
+<div class="absolute right-0 top-0 translate-x-4 -translate-y-4 w-24 h-24 bg-tertiary/5 rounded-full blur-xl pointer-events-none"></div>
+<div>
+<p class="text-label-md text-on-surface-variant uppercase tracking-wider mb-space-xs">Kehadiran Latihan</p>
+<div class="flex items-baseline gap-space-sm">
+<span class="font-headline-xl text-tertiary text-4xl">100%</span>
+<span class="text-body-sm text-on-surface">Tanpa Absen</span>
+</div>
+</div>
+<div class="mt-space-md flex items-center justify-between text-label-sm text-on-surface-variant">
+<span>24 Sesi Terjadwal</span>
+<span class="text-tertiary font-bold">Hadir</span>
+</div>
+</div>
+<div class="bg-surface-container-low/90 backdrop-blur-md p-space-lg rounded-2xl shadow-md flex flex-col justify-between relative overflow-hidden">
+<div class="absolute right-0 top-0 translate-x-4 -translate-y-4 w-24 h-24 bg-primary/5 rounded-full blur-xl pointer-events-none"></div>
+<div>
+<p class="text-label-md text-on-surface-variant uppercase tracking-wider mb-space-xs">Peringkat Kerabat Kerja</p>
+<div class="flex items-baseline gap-space-sm">
+<span class="font-headline-xl text-on-surface text-4xl">#1</span>
+<span class="text-body-sm text-primary font-semibold">Divisi Sutradara</span>
+</div>
+</div>
+<div class="mt-space-md flex items-center justify-between text-label-sm text-on-surface-variant">
+<span>Total Anggota</span>
+<span class="text-on-surface font-bold">32 Siswa</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content Grid: Radar Chart & Criteria Details -->
+<section class="px-space-gutter mb-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Radar Chart & Stage Progression Card -->
+<div class="lg:col-span-5 bg-surface-container-low/90 backdrop-blur-md p-space-lg rounded-2xl shadow-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<h3 class="font-headline-md text-on-surface flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary">radar</span>
+              Analisis Kompetensi Teater
+            </h3>
+<span class="text-label-sm px-space-sm py-1 rounded-full bg-primary-container text-on-primary-container">6 Kriteria Utama</span>
+</div>
+<p class="text-body-sm text-on-surface-variant mb-space-lg">Visualisasi kemampuan berdasarkan penilaian silang (Guru, Ketua Tim, Rekan Sejawat).</p>
+<!-- Radar Chart Graphic Simulation using SVG -->
+<div class="relative w-full aspect-square max-w-[320px] mx-auto flex items-center justify-center my-space-md">
+<svg class="w-full h-full text-outline-variant/30" viewbox="0 0 200 200">
+<!-- Background Webs -->
+<polygon fill="none" points="100,20 170,60 170,140 100,180 30,140 30,60" stroke="currentColor" stroke-dasharray="2 2" stroke-width="1"></polygon>
+<polygon fill="none" points="100,50 145,75 145,125 100,150 55,125 55,75" stroke="currentColor" stroke-width="1"></polygon>
+<polygon fill="none" points="100,80 120,90 120,110 100,120 80,110 80,90" stroke="currentColor" stroke-width="1"></polygon>
+<!-- Axes -->
+<line stroke="currentColor" stroke-width="1" x1="100" x2="100" y1="100" y2="20"></line>
+<line stroke="currentColor" stroke-width="1" x1="100" x2="170" y1="100" y2="60"></line>
+<line stroke="currentColor" stroke-width="1" x1="100" x2="170" y1="100" y2="140"></line>
+<line stroke="currentColor" stroke-width="1" x1="100" x2="100" y1="100" y2="180"></line>
+<line stroke="currentColor" stroke-width="1" x1="100" x2="30" y1="100" y2="140"></line>
+<line stroke="currentColor" stroke-width="1" x1="100" x2="30" y1="100" y2="60"></line>
+<!-- Data Polygon -->
+<polygon class="text-primary/40 fill-primary/30 stroke-primary" points="100,25 160,65 155,130 100,165 40,130 35,65" stroke-width="2"></polygon>
+<!-- Points -->
+<circle class="fill-primary" cx="100" cy="25" r="4"></circle>
+<circle class="fill-primary" cx="160" cy="65" r="4"></circle>
+<circle class="fill-primary" cx="155" cy="130" r="4"></circle>
+<circle class="fill-primary" cx="100" cy="165" r="4"></circle>
+<circle class="fill-primary" cx="40" cy="130" r="4"></circle>
+<circle class="fill-primary" cx="35" cy="65" r="4"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<span class="text-label-sm bg-surface/80 px-space-xs py-0.5 rounded text-on-surface backdrop-blur-sm">Skor 92.4</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-md border-t border-surface-container-highest">
+<div class="flex items-center justify-between text-label-sm text-on-surface-variant">
+<span>Status Validasi Rapor</span>
+<span class="text-secondary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">verified</span> Terverifikasi Guru Seni Budaya
+            </span>
+</div>
+</div>
+</div>
+<!-- Criteria Breakdown & 5 Stages -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- Criteria Details List -->
+<div class="bg-surface-container-low/90 backdrop-blur-md p-space-lg rounded-2xl shadow-xl">
+<div class="flex items-center justify-between mb-space-md">
+<h3 class="font-headline-md text-on-surface">Rincian Kriteria Penilaian</h3>
+<span class="text-label-sm text-on-surface-variant">Skala 0 - 100</span>
+</div>
+<div class="space-y-space-md">
+<!-- Criterion 1 -->
+<div>
+<div class="flex justify-between items-center mb-1 text-body-sm">
+<span class="font-semibold text-on-surface flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Hafalan Dialog &amp; Ketepatan Timing
+                </span>
+<span class="font-bold text-primary">95/100</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 95%"></div>
+</div>
+</div>
+<!-- Criterion 2 -->
+<div>
+<div class="flex justify-between items-center mb-1 text-body-sm">
+<span class="font-semibold text-on-surface flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Penjiwaan &amp; Ekspresi Emosional
+                </span>
+<span class="font-bold text-secondary">90/100</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 90%"></div>
+</div>
+</div>
+<!-- Criterion 3 -->
+<div>
+<div class="flex justify-between items-center mb-1 text-body-sm">
+<span class="font-semibold text-on-surface flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> Proyeksi Suara &amp; Artikulasi
+                </span>
+<span class="font-bold text-tertiary">92/100</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 92%"></div>
+</div>
+</div>
+<!-- Criterion 4 -->
+<div>
+<div class="flex justify-between items-center mb-1 text-body-sm">
+<span class="font-semibold text-on-surface flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Blocking &amp; Penguasaan Panggung
+                </span>
+<span class="font-bold text-primary">94/100</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 94%"></div>
+</div>
+</div>
+<!-- Criterion 5 -->
+<div>
+<div class="flex justify-between items-center mb-1 text-body-sm">
+<span class="font-semibold text-on-surface flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Interaksi Panggung &amp; Chemistry
+                </span>
+<span class="font-bold text-secondary">88/100</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 88%"></div>
+</div>
+</div>
+<!-- Criterion 6 -->
+<div>
+<div class="flex justify-between items-center mb-1 text-body-sm">
+<span class="font-semibold text-on-surface flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> Kedisiplinan &amp; Etos Kerja Tim
+                </span>
+<span class="font-bold text-tertiary">95/100</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 95%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- 5 Stages Timeline Tracker -->
+<div class="bg-surface-container-low/90 backdrop-blur-md p-space-lg rounded-2xl shadow-xl">
+<h3 class="font-headline-md text-on-surface mb-space-md">Progres 5 Tahapan Pementasan</h3>
+<div class="grid grid-cols-1 sm:grid-cols-5 gap-space-sm">
+<div class="bg-surface-container p-space-md rounded-xl flex flex-col items-center text-center">
+<span class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold mb-2 text-body-sm">1</span>
+<span class="text-label-sm font-semibold text-on-surface mb-1">Eksplorasi Naskah</span>
+<span class="text-[10px] text-primary">Selesai (100%)</span>
+</div>
+<div class="bg-surface-container p-space-md rounded-xl flex flex-col items-center text-center">
+<span class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold mb-2 text-body-sm">2</span>
+<span class="text-label-sm font-semibold text-on-surface mb-1">Reading &amp; Casting</span>
+<span class="text-[10px] text-primary">Selesai (100%)</span>
+</div>
+<div class="bg-surface-container p-space-md rounded-xl flex flex-col items-center text-center">
+<span class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold mb-2 text-body-sm">3</span>
+<span class="text-label-sm font-semibold text-on-surface mb-1">Blocking &amp; Latihan</span>
+<span class="text-[10px] text-primary">Selesai (100%)</span>
+</div>
+<div class="bg-surface-container p-space-md rounded-xl flex flex-col items-center text-center ring-2 ring-secondary">
+<span class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold mb-2 text-body-sm">4</span>
+<span class="text-label-sm font-semibold text-on-surface mb-1">Gladi Bersih</span>
+<span class="text-[10px] text-secondary">Berlangsung</span>
+</div>
+<div class="bg-surface-container p-space-md rounded-xl flex flex-col items-center text-center opacity-60">
+<span class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-bold mb-2 text-body-sm">5</span>
+<span class="text-label-sm font-semibold text-on-surface mb-1">Pementasan Utama</span>
+<span class="text-[10px] text-on-surface-variant">Menunggu</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Evaluator Comments Section (Guru 50%, Ketua 30%, Rekan 20%) -->
+<section class="px-space-gutter mb-space-xl">
+<div class="bg-surface-container-low/90 backdrop-blur-md p-space-lg rounded-2xl shadow-xl">
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-space-lg gap-space-sm">
+<div>
+<h3 class="font-headline-lg text-on-surface">Ulasan &amp; Catatan Penilai</h3>
+<p class="text-body-sm text-on-surface-variant">Komposisi Bobot: Guru (50%) • Ketua Tim (30%) • Rekan Sejawat (20%)</p>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="px-space-sm py-1 rounded-full bg-primary-container text-on-primary-container text-label-sm font-bold">Bobot Guru: 50%</span>
+<span class="px-space-sm py-1 rounded-full bg-secondary-container/20 text-secondary text-label-sm font-bold">Ketua: 30%</span>
+<span class="px-space-sm py-1 rounded-full bg-surface-container-highest text-on-surface text-label-sm font-bold">Rekan: 20%</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Guru Evaluator -->
+<div class="bg-surface-container p-space-lg rounded-xl flex flex-col justify-between border-l-4 border-primary">
+<div>
+<div class="flex items-center gap-space-sm mb-space-md">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Teacher evaluator portrait, formal attire, warm professional look" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvw4BZDA5HoIPVMSqL8Au-H4kVX0FHTWZ0ymDPNJyIg3ZGyikxtRoHsOPhreFmXK6XuVn1tNoZkh3aq996sV3kU7Cy4YzCrHynXjENhPywIyFVYmwU7Dh6RoBz0Jsvm1wRsQ96lbGhiK8OEm1yHkAlhoD6d1FckYO-CymLeiRIVxoE3BRRN-wwmgFrulFj5VHEof4FMNZ7zwiIyS0uijUSRCvwidfidL_oKonKbY3GWrs_Rzxrbs2z1g"/>
+<div>
+<h4 class="font-headline-sm text-on-surface">Dra. Hj. Siti Aminah</h4>
+<p class="text-label-sm text-primary font-semibold">Guru Pengampu Seni Budaya (50%)</p>
+</div>
+</div>
+<p class="text-body-sm text-on-surface-variant italic mb-space-md">"Kepemimpinan Budi sebagai sutradara sangat menonjol. Mampu mengarahkan tempo dialog dengan sangat baik dan menjaga disiplin latihan seluruh kru."</p>
+</div>
+<div class="flex items-center justify-between pt-space-md border-t border-surface-container-highest text-label-sm">
+<span class="text-on-surface-variant">Skor Diberikan:</span>
+<span class="font-headline-sm text-primary">95.0 / 100</span>
+</div>
+</div>
+<!-- Ketua Evaluator -->
+<div class="bg-surface-container p-space-lg rounded-xl flex flex-col justify-between border-l-4 border-secondary">
+<div>
+<div class="flex items-center gap-space-sm mb-space-md">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Student team leader portrait, confident smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbkNNPauNmoKD-jclsFHbzbAo3nyVI8oCYxt5WXnCRBIFUIzifrT2I4kFvCllraC0av0Sph9osfkT9pTVF2GIXjkg6m1VsU9SbixJaR6dH1YJIgk6Iyk1YjQ6zUbIYDlHlCKcJBwv9cCrXjo2VrA2NBltg917cjw7b3AwTzKqbFLH-1gAGoo7XTN7loscxi4lUxBZ_WVZAluJg3BFbamGjVnDknQhn2SGKmX4D3jiKIy8ZdcKeBdBABg"/>
+<div>
+<h4 class="font-headline-sm text-on-surface">Ahmad Fauzi</h4>
+<p class="text-label-sm text-secondary font-semibold">Ketua Produksi / Pimpinan (30%)</p>
+</div>
+</div>
+<p class="text-body-sm text-on-surface-variant italic mb-space-md">"Koordinasi antar divisi berjalan lancar berkat ketegasan Budi saat gladi. Sedikit catatan pada pengaturan properti panggung di babak kedua."</p>
+</div>
+<div class="flex items-center justify-between pt-space-md border-t border-surface-container-highest text-label-sm">
+<span class="text-on-surface-variant">Skor Diberikan:</span>
+<span class="font-headline-sm text-secondary">90.0 / 100</span>
+</div>
+</div>
+<!-- Peer Evaluator -->
+<div class="bg-surface-container p-space-lg rounded-xl flex flex-col justify-between border-l-4 border-tertiary">
+<div>
+<div class="flex items-center gap-space-sm mb-space-md">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Peer crew member portrait, cheerful expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXTnP9TxoKJ9NERWOVFUnNdBo7kLqzjWk7h5qJZUI6s_ZGygSdozq0_oCY7tUStGmSUDnSLRvNmnPo-EYZ-bj_A2ZjpENf_i0O-jVcp2YaeuByqRHYNzKURMb7q6WvbHlt3DFUOdY1rpIHs8FX7UfgX3Z1A-qX_nLlcMploO4p6FY2_WzFOeOuB6Rgen0RStiArXt2xpwebwFIixQWmvGrLivDW6gVn_3g4tG6Fpi9BpOw5gnToIRgEw"/>
+<div>
+<h4 class="font-headline-sm text-on-surface">Dewi Lestari</h4>
+<p class="text-label-sm text-tertiary font-semibold">Perwakilan Rekan Sejawat (20%)</p>
+</div>
+</div>
+<p class="text-body-sm text-on-surface-variant italic mb-space-md">"Budi sangat suportif dan membantu rekan aktor yang kesulitan menghafalkan dialog panjang. Suasananya menyenangkan dan profesional."</p>
+</div>
+<div class="flex items-center justify-between pt-space-md border-t border-surface-container-highest text-label-sm">
+<span class="text-on-surface-variant">Skor Diberikan:</span>
+<span class="font-headline-sm text-tertiary">91.0 / 100</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4 Floating Action Buttons (Kerabat Kerja pulse, Panduan, Aduan WA, Darurat) -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col gap-space-sm">
+<!-- Kerabat Kerja with Pulse Animation -->
+<button class="relative flex items-center gap-space-sm px-space-md py-space-sm rounded-full bg-tertiary text-on-tertiary shadow-xl hover:opacity-90 transition-all" onclick="openModal('kerabat')">
+<span class="absolute -top-1 -right-1 flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-secondary"></span>
+</span>
+<span class="material-symbols-outlined">groups</span>
+<span class="text-body-sm font-semibold">Kerabat Kerja</span>
+</button>
+<!-- Panduan -->
+<button class="flex items-center gap-space-sm px-space-md py-space-sm rounded-full bg-primary text-on-primary shadow-xl hover:opacity-90 transition-all" onclick="openModal('panduan')">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="text-body-sm font-semibold">Panduan</span>
+</button>
+<!-- Aduan ke WA Guru -->
+<button class="flex items-center gap-space-sm px-space-md py-space-sm rounded-full bg-secondary text-on-secondary shadow-xl hover:opacity-90 transition-all" onclick="openWA()">
+<span class="material-symbols-outlined">support_agent</span>
+<span class="text-body-sm font-semibold">Aduan WA Guru</span>
+</button>
+<!-- Darurat / Bantuan Cepat -->
+<button class="flex items-center gap-space-sm px-space-md py-space-sm rounded-full bg-error text-on-error shadow-xl hover:opacity-90 transition-all" onclick="openModal('darurat')">
+<span class="material-symbols-outlined">warning</span>
+<span class="text-body-sm font-semibold">Darurat</span>
+</button>
+</div>
+<!-- Modal Container (Hidden by default) -->
+<div class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-space-gutter" id="app-modal">
+<div class="bg-surface-container-low max-w-lg w-full p-space-lg rounded-2xl shadow-2xl relative" id="modal-content">
+<button class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface" onclick="closeModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+<div id="modal-body">
+<!-- Dynamic content injected here -->
+</div>
+</div>
+</div>
+<script>
+    function downloadReport() {
+      alert("Memproses PDF Rapor Resmi ber-Kop SMPN 10 Samarinda... Unduhan akan segera dimulai.");
+    }
+
+    function openWA() {
+      window.open("https://wa.me/6281234567890?text=Halo%20Guru,%20saya%20Budi%20Santoso%20ingin%20berkonsultasi%20terkait%20penilaian%20pementasan.", "_blank");
+    }
+
+    function openModal(type) {
+      const modal = document.getElementById('app-modal');
+      const body = document.getElementById('modal-body');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+
+      if (type === 'kerabat') {
+        body.innerHTML = `
+          <h3 class="font-headline-md text-on-surface mb-2">Struktur Kerabat Kerja Teater</h3>
+          <p class="text-body-sm text-on-surface-variant mb-4">Daftar pengurus inti pementasan lakon SMPN 10 Samarinda.</p>
+          <div class="space-y-2 max-h-60 overflow-y-auto">
+            <div class="p-3 bg-surface-container rounded-xl flex justify-between items-center">
+              <div><p class="font-semibold text-on-surface">Budi Santoso</p><span class="text-label-sm text-secondary">Sutradara (Emas)</span></div>
+              <span class="text-primary font-bold">Ketua</span>
+            </div>
+            <div class="p-3 bg-surface-container rounded-xl flex justify-between items-center">
+              <div><p class="font-semibold text-on-surface">Ahmad Fauzi</p><span class="text-label-sm text-primary">Pimpinan Produksi</span></div>
+              <span class="text-on-surface-variant text-label-sm">Aktif</span>
+            </div>
+            <div class="p-3 bg-surface-container rounded-xl flex justify-between items-center">
+              <div><p class="font-semibold text-on-surface">Dewi Lestari</p><span class="text-label-sm text-tertiary">Bendahara & Kostum</span></div>
+              <span class="text-on-surface-variant text-label-sm">Aktif</span>
+            </div>
+          </div>
+        `;
+      } else if (type === 'panduan') {
+        body.innerHTML = `
+          <h3 class="font-headline-md text-on-surface mb-2">Panduan SP-PPT</h3>
+          <p class="text-body-sm text-on-surface-variant mb-4">Sistem Penilaian Pementasan Teater SMPN 10 Samarinda.</p>
+          <ul class="list-disc pl-5 space-y-2 text-body-sm text-on-surface-variant">
+            <li>Penilaian akhir dihitung dari kombinasi Guru (50%), Ketua (30%), dan Rekan (20%).</li>
+            <li>Pastikan seluruh 5 tahapan pementasan berstatus selesai sebelum pementasan utama.</li>
+            <li>Gunakan tombol Unduh Rapor untuk mendapatkan transkrip ber-kop resmi sekolah.</li>
+          </ul>
+        `;
+      } else if (type === 'darurat') {
+        body.innerHTML = `
+          <h3 class="font-headline-md text-error mb-2">Pusat Bantuan Darurat</h3>
+          <p class="text-body-sm text-on-surface-variant mb-4">Gunakan tombol ini jika terjadi kendala teknis mendesak saat gladi atau pementasan.</p>
+          <div class="p-4 bg-error-container/20 rounded-xl mb-4">
+            <p class="text-body-sm text-on-surface font-semibold">Hotline Darurat Teater:</p>
+            <p class="text-headline-sm text-error">+62 811 555 999 (Guru Piket)</p>
+          </div>
+          <button onclick="closeModal()" class="w-full py-2 rounded-xl bg-surface-container-highest text-on-surface font-semibold">Tutup</button>
+        `;
+      }
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('app-modal');
+      modal.classList.remove('flex');
+      modal.classList.add('hidden');
+    }
+  </script>
+</div></main></div></body></html>
